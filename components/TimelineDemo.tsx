@@ -35,7 +35,7 @@ export function TimelineDemo() {
       content: (
         <div>
           <h3 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white md:text-3xl">
-             Access your Leadseeder dashboard 
+             Access your leadxdeal dashboard 
           </h3>
           <p className="mb-4 text-lg font-normal text-neutral-700 md:text-xl dark:text-neutral-300">
           Tag, filter, and export your leads for targeted LinkedIn automation campaigns.

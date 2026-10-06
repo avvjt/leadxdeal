@@ -24,19 +24,19 @@ type FAQSection = {
 
 const faqSections: FAQSection[] = [
   {
-    title: "About Leadseeder",
+    title: "About leadxdeal",
     items: [
       {
         id: "about-1",
         question:
-          "What makes Leadseeder different from other LinkedIn automation tools?",
+          "What makes leadxdeal different from other LinkedIn automation tools?",
         answer:
-          "Leadseeder stands out through its AI-powered contextual engagement system that analyzes profiles and content to generate hyper-personalized outreach. Unlike basic automation tools that send generic messages, our platform studies each prospect's activity history, job changes, content engagement patterns, and shared connections to craft relevant messaging. We combine this with smart throttling algorithms that mimic human behavior patterns to maintain account safety. Additionally, our proprietary 'Relationship Heatmap' visually tracks engagement depth across your network, helping you prioritize high-value connections.",
+          "leadxdeal stands out through its AI-powered contextual engagement system that analyzes profiles and content to generate hyper-personalized outreach. Unlike basic automation tools that send generic messages, our platform studies each prospect's activity history, job changes, content engagement patterns, and shared connections to craft relevant messaging. We combine this with smart throttling algorithms that mimic human behavior patterns to maintain account safety. Additionally, our proprietary 'Relationship Heatmap' visually tracks engagement depth across your network, helping you prioritize high-value connections.",
       },
       {
         id: "about-2",
         question:
-          "How does Leadseeder ensure compliance with LinkedIn's terms of service?",
+          "How does leadxdeal ensure compliance with LinkedIn's terms of service?",
         answer:
           "We maintain strict compliance through a multi-layered approach: 1) Activity pacing that never exceeds LinkedIn's interaction limits (customized per account age and size), 2) Randomized engagement intervals that mimic human usage patterns, 3) Proprietary 'Stealth Mode' technology that routes activities through residential IP networks, 4) Regular algorithm updates based on LinkedIn's changing policies (we monitor 37+ signals daily), and 5) Built-in activity suspension when abnormal patterns are detected. Since 2023, our 12,000+ active users have maintained a 99.97% account safety rate.",
       },
@@ -67,7 +67,7 @@ const faqSections: FAQSection[] = [
         id: "work-3",
         question: "Can I integrate with my existing tech stack?",
         answer:
-          "Yes, Leadseeder offers native integrations with: CRM (Salesforce, HubSpot, Pipedrive), Marketing Automation (Marketo, Mailchimp), Calendar (Calendly, Google Calendar), and Data Enrichment (Clearbit, ZoomInfo). Our open API supports custom integrations - popular use cases include syncing engaged leads to Slack channels, pushing LinkedIn activity data to BI tools, and triggering webinar invites based on engagement level. Setup takes under 10 minutes for standard integrations using OAuth authentication.",
+          "Yes, leadxdeal offers native integrations with: CRM (Salesforce, HubSpot, Pipedrive), Marketing Automation (Marketo, Mailchimp), Calendar (Calendly, Google Calendar), and Data Enrichment (Clearbit, ZoomInfo). Our open API supports custom integrations - popular use cases include syncing engaged leads to Slack channels, pushing LinkedIn activity data to BI tools, and triggering webinar invites based on engagement level. Setup takes under 10 minutes for standard integrations using OAuth authentication.",
       },
     ],
   },
@@ -201,7 +201,7 @@ export default function FAQsTwo() {
     return groups;
   }, [filteredFaqs]);
 
-  const email = "vidit@leadseeder.co";
+  const email = "vidit@leadxdeal.co";
   const subject = "Request for a Meeting";
   const body =
     "Hello, I couldn't find a suitable time on your calendar. Can we schedule a meeting at a time convenient for you?";

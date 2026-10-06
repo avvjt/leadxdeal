@@ -16,7 +16,7 @@ const BookCallHero = () => (
 
 const PreFooterCTA = () => {
  
-  const email = "vidit@leadseeder.co"; 
+  const email = "vidit@leadxdeal.co"; 
   const subject = "Request for a Meeting";
   const body = "Hello, I couldn't find a suitable time on your calendar. Can we schedule a meeting at a time convenient for you?";
 

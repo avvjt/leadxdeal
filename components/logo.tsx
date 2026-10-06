@@ -17,7 +17,7 @@ export const Logo = ({ className }: { className?: string }) => {
       <div className="relative w-[120px] h-10">
         <Image
           src="/images/leadsvg.svg"
-          alt="Leadseeder"
+          alt="leadxdeal"
           fill
           className="object-contain dark:brightness-0 dark:invert"
         />

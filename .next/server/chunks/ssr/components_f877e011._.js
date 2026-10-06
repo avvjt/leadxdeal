@@ -592,7 +592,7 @@ const footerLinks = [
     },
     {
         title: "Help Center",
-        href: "https://intercom.help/leadseeder/en/",
+        href: "https://intercom.help/leadxdeal/en/",
         external: true
     },
     {
@@ -622,7 +622,7 @@ const dockLinks = [
             lineNumber: 41,
             columnNumber: 7
         }, this),
-        href: "https://x.com/Leadseeder",
+        href: "https://x.com/leadxdeal",
         external: true
     },
     {
@@ -634,7 +634,7 @@ const dockLinks = [
             lineNumber: 49,
             columnNumber: 7
         }, this),
-        href: "https://www.facebook.com/Leadseeder",
+        href: "https://www.facebook.com/leadxdeal",
         external: true
     },
     {
@@ -646,7 +646,7 @@ const dockLinks = [
             lineNumber: 58,
             columnNumber: 7
         }, this),
-        href: "https://www.youtube.com/@Leadseeder/videos",
+        href: "https://www.youtube.com/@leadxdeal/videos",
         external: true
     },
     {
@@ -658,7 +658,7 @@ const dockLinks = [
             lineNumber: 66,
             columnNumber: 7
         }, this),
-        href: "https://www.instagram.com/Leadseeder",
+        href: "https://www.instagram.com/leadxdeal",
         external: true
     }
 ];
@@ -683,7 +683,7 @@ function FooterSection() {
                                 className: "relative h-10 w-10 sm:h-10 sm:w-10",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                     src: "/images/seedd.png",
-                                    alt: "Leadseeder seed icon",
+                                    alt: "leadxdeal seed icon",
                                     layout: "fill",
                                     objectFit: "contain",
                                     "aria-hidden": "true"
@@ -701,7 +701,7 @@ function FooterSection() {
                                 className: "relative w-[120px] h-12 sm:w-[140px] sm:h-14",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                                     src: "/images/leadsvg.svg",
-                                    alt: "Leadseeder",
+                                    alt: "leadxdeal",
                                     layout: "fill",
                                     objectFit: "contain",
                                     className: "dark:brightness-0 dark:invert"
@@ -760,7 +760,7 @@ function FooterSection() {
                                 children: [
                                     "© ",
                                     new Date().getFullYear(),
-                                    " Leadseeder. Not an official product of LinkedIn™."
+                                    " leadxdeal. Not an official product of LinkedIn™."
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/footer.tsx",
@@ -1820,7 +1820,7 @@ function HeroSection() {
                                 className: "relative z-20 flex flex-wrap items-center justify-center gap-4 pt-4",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$hover$2d$border$2d$gradient$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["HoverBorderGradient"], {
                                     as: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"],
-                                    href: "/https://intercom.help/leadseeder-d062fd4f1bbf/en/articles/11736915-connecting-your-linkedin-account-using-the-leadseeder-extension",
+                                    href: "/https://intercom.help/leadxdeal-d062fd4f1bbf/en/articles/11736915-connecting-your-linkedin-account-using-the-leadxdeal-extension",
                                     containerClassName: "rounded-xl",
                                     className: "h-10.5 px-6 py-2.5 text-black bg-white border-white backdrop-blur-sm transition-colors hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-offset-2 focus:ring-offset-black",
                                     duration: 1,
@@ -4098,28 +4098,28 @@ function SomeFaq() {
         },
         {
             id: 'about-2',
-            question: 'What is Leadseeder?',
+            question: 'What is leadxdeal?',
             answer: 'Automation tools are software designed to automate certain tasks that can streamline your social media activity. Besides saving you time, It help you run personalized campaigns and analyse data to help you create better versions of your campaigns.'
         },
         {
             id: 'about-3',
-            question: 'An I get a demo of Leadseeder and get help with setup?',
+            question: 'An I get a demo of leadxdeal and get help with setup?',
             answer: 'Automation tools are software designed to automate certain tasks that can streamline your social media activity. Besides saving you time, It help you run personalized campaigns and analyse data to help you create better versions of your campaigns.'
         },
         {
             id: 'about-4',
-            question: 'What results can I expect from Leadseeder?',
+            question: 'What results can I expect from leadxdeal?',
             answer: 'Automation tools are software designed to automate certain tasks that can streamline your social media activity. Besides saving you time, It help you run personalized campaigns and analyse data to help you create better versions of your campaigns.'
         },
         {
             id: 'about-5',
-            question: 'Do I need to keep my browser and laptop open while Leadseeder is up and running?',
+            question: 'Do I need to keep my browser and laptop open while leadxdeal is up and running?',
             answer: 'Automation tools are software designed to automate certain tasks that can streamline your social media activity. Besides saving you time, It help you run personalized campaigns and analyse data to help you create better versions of your campaigns.'
         }
     ];
     const faqSections = [
         {
-            title: 'About Leadseeder',
+            title: 'About leadxdeal',
             items: about
         }
     ];

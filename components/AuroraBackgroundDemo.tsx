@@ -29,7 +29,7 @@ export function AuroraBackgroundDemo() {
           asChild
           size="lg"
           className="bg-black dark:bg-white rounded-full w-fit text-white dark:text-black px-6 py-3">
-          <Link href="/https://intercom.help/leadseeder-d062fd4f1bbf/en/articles/11736915-connecting-your-linkedin-account-using-the-leadseeder-extension">
+          <Link href="/https://intercom.help/leadxdeal-d062fd4f1bbf/en/articles/11736915-connecting-your-linkedin-account-using-the-leadxdeal-extension">
             <span className="text-nowrap">Start for free</span>
           </Link>
         </Button>

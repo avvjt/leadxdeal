@@ -152,7 +152,7 @@ export const HeroHeader = () => {
                   className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
                   onClick={handleMenuItemClick}
                 >
-                  <Link href="/https://intercom.help/leadseeder-d062fd4f1bbf/en/articles/11736915-connecting-your-linkedin-account-using-the-leadseeder-extension">
+                  <Link href="/https://intercom.help/leadxdeal-d062fd4f1bbf/en/articles/11736915-connecting-your-linkedin-account-using-the-leadxdeal-extension">
                     <span>Get Started</span>
                   </Link>
                 </HoverBorderGradient>

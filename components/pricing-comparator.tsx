@@ -203,7 +203,7 @@ export default function PricingComparator() {
                     }`}
                     href={
                       plan.name === "Enterprise"
-                        ? "mailto:support@leadseeder.co"
+                        ? "mailto:support@leadxdeal.co"
                         : "#"
                     }
                   >

@@ -14,9 +14,9 @@ const PrivacyPolicy: React.FC = () => {
     {
       title: "SCOPE & APPLICABILITY",
       content: [
-        "This Privacy Policy applies to all individuals who access or use Leadseeder in any capacity, whether directly or indirectly, and governs the collection, usage, storage, and disclosure of information as deemed necessary for operational integrity.",
-        "Leadseeder functions within a broad and evolving technological landscape, which may involve interactions with third-party platforms, external service providers, and various other digital frameworks. While we take measures to safeguard user interests, we cannot definitively account for or influence external policies, changes, or restrictions that may arise over time.",
-        "Users are advised to exercise reasonable discretion when engaging with external platforms, as Leadseeder does not dictate or control third-party actions.",
+        "This Privacy Policy applies to all individuals who access or use leadxdeal in any capacity, whether directly or indirectly, and governs the collection, usage, storage, and disclosure of information as deemed necessary for operational integrity.",
+        "leadxdeal functions within a broad and evolving technological landscape, which may involve interactions with third-party platforms, external service providers, and various other digital frameworks. While we take measures to safeguard user interests, we cannot definitively account for or influence external policies, changes, or restrictions that may arise over time.",
+        "Users are advised to exercise reasonable discretion when engaging with external platforms, as leadxdeal does not dictate or control third-party actions.",
       ],
     },
     {
@@ -24,14 +24,14 @@ const PrivacyPolicy: React.FC = () => {
       content: [
         <React.Fragment key="info-collection">
           <p className="font-medium mb-2">
-            The types of information collected by Leadseeder may include, but
+            The types of information collected by leadxdeal may include, but
             are not necessarily limited to:
           </p>
 
           <p className="font-semibold mt-4">2.1 Direct User Data</p>
           <p>
             Users may voluntarily provide certain information during
-            registration, subscription, or interaction with Leadseeder. This may
+            registration, subscription, or interaction with leadxdeal. This may
             encompass:
           </p>
           <ul className="list-disc pl-6 mt-2 space-y-1">
@@ -42,7 +42,7 @@ const PrivacyPolicy: React.FC = () => {
             <li>Account configuration settings and engagement preferences</li>
           </ul>
           <p className="mt-2">
-            While we may process transactional and operational data, Leadseeder
+            While we may process transactional and operational data, leadxdeal
             does not store user credentials associated with third-party
             services.
           </p>
@@ -75,7 +75,7 @@ const PrivacyPolicy: React.FC = () => {
             2.3 User-Generated Content & Engagement Data
           </p>
           <p>
-            Users may engage with Leadseeder in ways that generate or transmit
+            Users may engage with leadxdeal in ways that generate or transmit
             certain forms of data, some of which may be visible within the
             platform's ecosystem. The precise nature, extent, and retention of
             such data may vary depending on numerous factors, including but not
@@ -83,7 +83,7 @@ const PrivacyPolicy: React.FC = () => {
             operational considerations.
           </p>
           <p>
-            Leadseeder does not assume responsibility for data persistence or
+            leadxdeal does not assume responsibility for data persistence or
             integrity beyond what is functionally required for service delivery.
           </p>
         </React.Fragment>,
@@ -92,7 +92,7 @@ const PrivacyPolicy: React.FC = () => {
     {
       title: "DATA UTILIZATION & PURPOSES",
       content: [
-        "Leadseeder processes collected information within reasonable operational and strategic boundaries to facilitate core functionalities, ensure platform stability, and enhance overall user experience. The scope of usage may include:",
+        "leadxdeal processes collected information within reasonable operational and strategic boundaries to facilitate core functionalities, ensure platform stability, and enhance overall user experience. The scope of usage may include:",
         <ul key="data-usage" className="list-disc pl-6 mt-2 space-y-1">
           <li>
             Service provisioning, platform management, and performance
@@ -110,14 +110,14 @@ const PrivacyPolicy: React.FC = () => {
           </li>
         </ul>,
         "Where applicable, users may receive updates, announcements, or promotional materials, though opt-out mechanisms may be available based on individual circumstances.",
-        "Leadseeder does not engage in the outright sale, distribution, or commercialization of user data beyond what is contextually relevant for platform operation.",
+        "leadxdeal does not engage in the outright sale, distribution, or commercialization of user data beyond what is contextually relevant for platform operation.",
       ],
     },
     {
       title: "THIRD-PARTY INTERACTIONS & INTEGRATIONS",
       content: [
-        "Users acknowledge that Leadseeder operates in an interconnected digital environment, which may include integrations, dependencies, or indirect interactions with third-party platforms.",
-        "While we implement measures to streamline external connectivity, Leadseeder does not dictate the policies, restrictions, or actions of third-party service providers. Accordingly, any modifications, access limitations, or enforcement measures imposed by external entities remain beyond our scope of control.",
+        "Users acknowledge that leadxdeal operates in an interconnected digital environment, which may include integrations, dependencies, or indirect interactions with third-party platforms.",
+        "While we implement measures to streamline external connectivity, leadxdeal does not dictate the policies, restrictions, or actions of third-party service providers. Accordingly, any modifications, access limitations, or enforcement measures imposed by external entities remain beyond our scope of control.",
         "Where external payment processors, analytical tools, or infrastructure providers are involved, data handling is subject to their respective policies, and users should review such policies independently.",
       ],
     },
@@ -129,7 +129,7 @@ const PrivacyPolicy: React.FC = () => {
         <React.Fragment key="retention">
           <p className="font-semibold mt-4">Retention Guidelines</p>
           <p>
-            Leadseeder retains user data as long as operationally necessary,
+            leadxdeal retains user data as long as operationally necessary,
             though specific retention periods may vary based on evolving
             technical or regulatory considerations. Users may request data
             deletion, subject to feasibility and compliance constraints.
@@ -155,21 +155,21 @@ const PrivacyPolicy: React.FC = () => {
           </li>
           <li>The ability to opt out of certain communications</li>
         </ul>,
-        "To exercise such rights, users may contact support@leadseeder.co, though response times and procedural requirements may vary.",
+        "To exercise such rights, users may contact support@leadxdeal.co, though response times and procedural requirements may vary.",
       ],
     },
     {
       title: "LIABILITY & SERVICE LIMITATIONS",
       content: [
-        "Leadseeder provides tools and functionalities that facilitate workflow optimization. However, users assume full responsibility for their interactions, configurations, and compliance with third-party policies.",
-        "Leadseeder does not warrant uninterrupted service availability, absolute error-free operation, or immunity from external restrictions. Users acknowledge that:",
+        "leadxdeal provides tools and functionalities that facilitate workflow optimization. However, users assume full responsibility for their interactions, configurations, and compliance with third-party policies.",
+        "leadxdeal does not warrant uninterrupted service availability, absolute error-free operation, or immunity from external restrictions. Users acknowledge that:",
         <ul key="liability" className="list-disc pl-6 mt-2 space-y-1">
           <li>
             Any modifications or enforcement actions by external platforms are
-            beyond Leadseeder's control
+            beyond leadxdeal's control
           </li>
           <li>
-            Leadseeder shall not be liable for service disruptions, indirect
+            leadxdeal shall not be liable for service disruptions, indirect
             damages, or third-party account restrictions
           </li>
           <li>
@@ -183,7 +183,7 @@ const PrivacyPolicy: React.FC = () => {
     {
       title: "PRICING, MODIFICATIONS, & SERVICE CHANGES",
       content: [
-        "Leadseeder reserves the right to:",
+        "leadxdeal reserves the right to:",
         <ul key="pricing" className="list-disc pl-6 mt-2 space-y-1">
           <li>
             Adjust pricing structures, billing terms, or feature availability
@@ -210,25 +210,25 @@ const PrivacyPolicy: React.FC = () => {
           <p>
             📧 Email:{" "}
             <a
-              href="mailto:support@leadseeder.co"
+              href="mailto:support@leadxdeal.co"
               className="text-blue-600 hover:underline"
             >
-              support@leadseeder.co
+              support@leadxdeal.co
             </a>
           </p>
           <p>
             🌐 Website:{" "}
             <a
-              href="https://www.leadseeder.co"
+              href="https://www.leadxdeal.co"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:underline"
             >
-              www.leadseeder.co
+              www.leadxdeal.co
             </a>
           </p>
         </div>,
-        "By engaging with Leadseeder, users acknowledge that this Privacy Policy serves as a general framework subject to reasonable interpretation.",
+        "By engaging with leadxdeal, users acknowledge that this Privacy Policy serves as a general framework subject to reasonable interpretation.",
       ],
     },
   ];
@@ -251,7 +251,7 @@ const PrivacyPolicy: React.FC = () => {
             <div className="border-l-2 border-white-500 pl-6">
               <div className="space-y-4">
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  At Leadseeder (&quot;Company,&quot; &quot;we,&quot;
+                  At leadxdeal (&quot;Company,&quot; &quot;we,&quot;
                   &quot;us,&quot; or &quot;our&quot;), we recognize and respect
                   the importance of privacy and the careful handling of
                   information. We strive to maintain a transparent yet flexible
@@ -262,7 +262,7 @@ const PrivacyPolicy: React.FC = () => {
                   necessary.
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  By using Leadseeder, users agree to the terms outlined herein.
+                  By using leadxdeal, users agree to the terms outlined herein.
                   If any aspect of this policy is unclear or requires further
                   interpretation, we encourage users to exercise their
                   discretion accordingly.

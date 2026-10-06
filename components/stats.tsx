@@ -56,7 +56,7 @@ export default function StatsSection() {
           <div className="relative z-10 mx-auto max-w-xl space-y-6 text-center">
             <h2 className="text-4xl font-medium lg:text-5xl">Leedseeder in numbers</h2>
             <p>
-            Leadseeder powers scalable LinkedIn automation and lead generation for growing teams and enterprises.
+            leadxdeal powers scalable LinkedIn automation and lead generation for growing teams and enterprises.
             </p>
           </div>
           <div className="grid gap-12 divide-y *:text-center md:grid-cols-4 md:gap-2 md:divide-x md:divide-y-0">

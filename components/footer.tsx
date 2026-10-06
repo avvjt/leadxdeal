@@ -19,7 +19,7 @@ const footerLinks = [
   { title: "Book a call", href: "/book-a-call" },
   {
     title: "Help Center",
-    href: "https://intercom.help/leadseeder/en/",
+    href: "https://intercom.help/leadxdeal/en/",
     external: true,
   },
   { title: "Terms & Conditions ", href: "/terms" },
@@ -29,7 +29,7 @@ const footerLinks = [
   
   // {
   //   title: "Feature Request",
-  //   href: "https://leadseeder.canny.io/feature-requests",
+  //   href: "https://leadxdeal.canny.io/feature-requests",
   //   external: true,
   // },
 ];
@@ -40,7 +40,7 @@ const dockLinks = [
     icon: (
       <IconBrandX className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
-    href: "https://x.com/Leadseeder",
+    href: "https://x.com/leadxdeal",
     external: true,
   },
   {
@@ -48,7 +48,7 @@ const dockLinks = [
     icon: (
       <IconBrandFacebook className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
-    href: "https://www.facebook.com/Leadseeder",
+    href: "https://www.facebook.com/leadxdeal",
     external: true,
   },
 
@@ -57,7 +57,7 @@ const dockLinks = [
     icon: (
       <IconBrandYoutube className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
-    href: "https://www.youtube.com/@Leadseeder/videos",
+    href: "https://www.youtube.com/@leadxdeal/videos",
     external: true,
   },
   {
@@ -65,7 +65,7 @@ const dockLinks = [
     icon: (
       <IconBrandInstagram className="h-full w-full text-neutral-500 dark:text-neutral-300" />
     ),
-    href: "https://www.instagram.com/Leadseeder",
+    href: "https://www.instagram.com/leadxdeal",
     external: true,
   },
 ];
@@ -82,7 +82,7 @@ export default function FooterSection() {
           <div className="relative h-10 w-10 sm:h-10 sm:w-10">
             <Image
               src="/images/seedd.png"
-              alt="Leadseeder seed icon"
+              alt="leadxdeal seed icon"
               layout="fill"
               objectFit="contain"
               aria-hidden="true"
@@ -93,7 +93,7 @@ export default function FooterSection() {
           <div className="relative w-[120px] h-12 sm:w-[140px] sm:h-14">
             <Image
               src="/images/leadsvg.svg"
-              alt="Leadseeder"
+              alt="leadxdeal"
               layout="fill"
               objectFit="contain"
               className="dark:brightness-0 dark:invert"
@@ -118,7 +118,7 @@ export default function FooterSection() {
           </div>
 
           <div className="text-xs text-muted-foreground pb-4">
-            © {new Date().getFullYear()} Leadseeder. Not an official product of
+            © {new Date().getFullYear()} leadxdeal. Not an official product of
             LinkedIn™.
           </div>
         </div>

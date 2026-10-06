@@ -28,7 +28,7 @@ export default function Testimonials() {
             <CardContent>
               <blockquote className="grid h-full grid-rows-[1fr_auto] gap-6">
                 <p className="text-lg font-medium">
-                What truly impressed me was how naturally Leadseeder helped us connect with prospects on LinkedIn—without ever feeling pushy or salesy. Before scheduling a demo, the team actually reached out to me using their own automation solution, and the entire process felt unusually authentic and relevant. Unlike other tools that bombard connections with generic messages, Leadseeder enabled a sequence that felt personal and thoughtful every step of the way.
+                What truly impressed me was how naturally leadxdeal helped us connect with prospects on LinkedIn—without ever feeling pushy or salesy. Before scheduling a demo, the team actually reached out to me using their own automation solution, and the entire process felt unusually authentic and relevant. Unlike other tools that bombard connections with generic messages, leadxdeal enabled a sequence that felt personal and thoughtful every step of the way.
 
 The workflow is remarkably low-key: it prioritizes building real relationships over just pushing for a sale. This approach resonated so well that prospects responded much more openly, and it made our lead generation efforts feel more human. The ROI for our company has honestly exceeded all expectations—we closed a major enterprise client within the first month of implementation.
 
@@ -63,7 +63,7 @@ The workflow is remarkably low-key: it prioritizes building real relationships o
             <CardContent className="h-full pt-6">
               <blockquote className="grid h-full grid-rows-[1fr_auto] gap-6">
                 <p className="text-lg font-medium">
-                Leadseeder has truly transformed the way I generate leads and build my network on LinkedIn. I’ve been using it for six months, and it has significantly improved my outreach and expanded my professional connections. In my opinion, it’s the best budget-friendly alternative to Waalaxy and stands out compared to all the other expensive LinkedIn automation tools I’ve tried.
+                leadxdeal has truly transformed the way I generate leads and build my network on LinkedIn. I’ve been using it for six months, and it has significantly improved my outreach and expanded my professional connections. In my opinion, it’s the best budget-friendly alternative to Waalaxy and stands out compared to all the other expensive LinkedIn automation tools I’ve tried.
                 </p>
 
                 <div className="grid grid-cols-[auto_1fr] items-center gap-3">

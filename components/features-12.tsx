@@ -34,7 +34,7 @@ export default function Features() {
             <div className="bg-linear-to-b absolute inset-0 -z-10 sm:inset-6 sm:rounded-b-3xl dark:block dark:to-[color-mix(in_oklab,var(--color-zinc-900)_75%,var(--color-background))]"></div>
             <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16 lg:space-y-20 dark:[--color-border:color-mix(in_oklab,var(--color-white)_10%,transparent)]">
                 <div className="relative z-10 mx-auto max-w-2xl space-y-6 text-center">
-                    <h2 className="text-balance text-4xl font-semibold lg:text-6xl">Generate&nbsp;Leads&nbsp;in 4 easy steps with Leadseeder</h2>
+                    <h2 className="text-balance text-4xl font-semibold lg:text-6xl">Generate&nbsp;Leads&nbsp;in 4 easy steps with leadxdeal</h2>
                     <p>LeedSeeder is evolving to be more than just a Chrome Extension. It supports an entire to the APIs and platforms helping marketer and businesses innovate.</p>
                 </div>
 
@@ -51,7 +51,7 @@ export default function Features() {
                                     Import Prospects from various ways
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent>Search for your target users on. Use Leadseeder chrome extension to import these prospects effortlessly into your dashboard. You can import prospects from&nbsp;Groups,&nbsp;Events&nbsp;and&nbsp;connections.</AccordionContent>
+                            <AccordionContent>Search for your target users on. Use leadxdeal chrome extension to import these prospects effortlessly into your dashboard. You can import prospects from&nbsp;Groups,&nbsp;Events&nbsp;and&nbsp;connections.</AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-2">
                             <AccordionTrigger>
@@ -60,7 +60,7 @@ export default function Features() {
                                     Open Dashboard and Create Campaign
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent>Open the Leadseeder dashboard. Here, you can see all your imported prospects. To convert these prospects into leads, click on the&nbsp;&quot;Create Campaign&quot;&nbsp;button. You can see analytics of your campaigns in the Dashboard.</AccordionContent>
+                            <AccordionContent>Open the leadxdeal dashboard. Here, you can see all your imported prospects. To convert these prospects into leads, click on the&nbsp;&quot;Create Campaign&quot;&nbsp;button. You can see analytics of your campaigns in the Dashboard.</AccordionContent>
                         </AccordionItem>
                         <AccordionItem value="item-3">
                             <AccordionTrigger>
@@ -78,7 +78,7 @@ export default function Features() {
                                     Launch and Automate
                                 </div>
                             </AccordionTrigger>
-                            <AccordionContent>Click&nbsp;&quot;Start Campaign&quot;&nbsp;to launch. Now, you can enjoy a bowl of soup while Leadseeder handles all the manual tasks, boosting your efficiency and saves you dozens of hours.</AccordionContent>
+                            <AccordionContent>Click&nbsp;&quot;Start Campaign&quot;&nbsp;to launch. Now, you can enjoy a bowl of soup while leadxdeal handles all the manual tasks, boosting your efficiency and saves you dozens of hours.</AccordionContent>
                         </AccordionItem>
                     </Accordion>
 

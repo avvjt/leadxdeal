@@ -12,22 +12,22 @@ export default function SomeFaq() {
         },
         {
             id: 'about-2',
-            question: 'What is Leadseeder?',
+            question: 'What is leadxdeal?',
             answer: 'Automation tools are software designed to automate certain tasks that can streamline your social media activity. Besides saving you time, It help you run personalized campaigns and analyse data to help you create better versions of your campaigns.',
         },
         {
             id: 'about-3',
-            question: 'An I get a demo of Leadseeder and get help with setup?',
+            question: 'An I get a demo of leadxdeal and get help with setup?',
             answer: 'Automation tools are software designed to automate certain tasks that can streamline your social media activity. Besides saving you time, It help you run personalized campaigns and analyse data to help you create better versions of your campaigns.',
         },
         {
             id: 'about-4',
-            question: 'What results can I expect from Leadseeder?',
+            question: 'What results can I expect from leadxdeal?',
             answer: 'Automation tools are software designed to automate certain tasks that can streamline your social media activity. Besides saving you time, It help you run personalized campaigns and analyse data to help you create better versions of your campaigns.',
         },
         {
             id: 'about-5',
-            question: 'Do I need to keep my browser and laptop open while Leadseeder is up and running?',
+            question: 'Do I need to keep my browser and laptop open while leadxdeal is up and running?',
             answer: 'Automation tools are software designed to automate certain tasks that can streamline your social media activity. Besides saving you time, It help you run personalized campaigns and analyse data to help you create better versions of your campaigns.',
         },
     ]
@@ -35,7 +35,7 @@ export default function SomeFaq() {
    
 
     const faqSections = [
-        { title: 'About Leadseeder', items: about },
+        { title: 'About leadxdeal', items: about },
        
     ]
 

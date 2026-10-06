@@ -161,7 +161,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$scri
 ;
 ;
 const metadata = {
-    title: "Leadseeder",
+    title: "leadxdeal",
     description: "Automate LinkedIn connection"
 };
 function RootLayout({ children }) {

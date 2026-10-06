@@ -9,8 +9,8 @@ interface CalWidgetProps {
 }
 
 export default function CalWidget({ 
-  namespace = "queries", 
-  calLink = "vidit-gupta/queries"
+  namespace = "20min", 
+  calLink = "avvjt/20min"
 }: CalWidgetProps) {
   useEffect(() => {
     (async function initCal() {
@@ -19,7 +19,7 @@ export default function CalWidget({
         cal("ui", { 
           hideEventTypeDetails: false,
           layout: "month_view",
-          theme: "auto" // Let Cal.com handle theme detection
+          theme: "auto"
         });
       } catch (error) {
         console.error("Failed to load Cal.com widget", error);
@@ -34,7 +34,7 @@ export default function CalWidget({
       style={{ width: "100%", height: "100%", overflow: "scroll" }}
       config={{ 
         layout: "month_view",
-        theme: "auto" // Auto-detect theme
+        theme: "auto" 
       }}
     />
   );

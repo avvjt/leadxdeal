@@ -13,9 +13,9 @@ import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-w
 
 
 const footerLinks = [
-  { title: "Pricing", href: "/pricing" },
+  { title: "Pricing", href: "/dev" },
   { title: "Faq", href: "/faq" },
-  { title: "Blogs", href: "/blogs" },
+  { title: "Blogs", href: "/dev" },
   { title: "Book a call", href: "/book-a-call" },
   {
     title: "Help Center",

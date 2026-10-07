@@ -7,8 +7,8 @@ export const Logo = ({ className }: { className?: string }) => {
 
       <div className="relative h-8 w-8">
         <Image
-          src="/images/seedd.png"
-          alt=""
+          src="/images/lead.png"
+          alt="leadxdeal icon"
           fill
           className="object-contain"
           aria-hidden="true"
@@ -16,8 +16,8 @@ export const Logo = ({ className }: { className?: string }) => {
       </div>
       <div className="relative w-[120px] h-10">
         <Image
-          src="/images/leadsvg.svg"
-          alt="leadxdeal"
+          src="/images/leadtext.png"
+          alt="leadxdeal brand"
           fill
           className="object-contain dark:brightness-0 dark:invert"
         />
@@ -29,7 +29,7 @@ export const LogoIcon = ({ className }: { className?: string }) => {
   return (
     <div className={cn("relative size-8", className)}>
       <Image
-        src="/images/seedd.png"
+        src="/images/lead.png"
         alt="Icon"
         fill
         className="object-contain"

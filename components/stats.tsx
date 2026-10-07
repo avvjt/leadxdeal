@@ -54,7 +54,7 @@ export default function StatsSection() {
       <section className="py-12 md:py-20" ref={ref}>
         <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
           <div className="relative z-10 mx-auto max-w-xl space-y-6 text-center">
-            <h2 className="text-4xl font-medium lg:text-5xl">Leedseeder in numbers</h2>
+            <h2 className="text-4xl font-medium lg:text-5xl">Leedxdeal in numbers</h2>
             <p>
             leadxdeal powers scalable LinkedIn automation and lead generation for growing teams and enterprises.
             </p>

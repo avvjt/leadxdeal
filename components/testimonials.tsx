@@ -19,7 +19,7 @@ export default function Testimonials() {
             <CardHeader>
               {/* <img
                 className="h-10 w-fit dark:invert"
-                // src="/images/seed.png"
+                // src="/images/lead.png"
                 // alt="Nike Logo"
                 height="24"
                 width="auto"

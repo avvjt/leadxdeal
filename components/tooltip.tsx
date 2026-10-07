@@ -6,15 +6,15 @@ import { AnimatedTooltip } from "./ui/animated-tooltip";
 const people = [
   {
     id: 1,
-    name: "Chirag Gupta",
-    designation: "CEO & CTO @BoloSign",
+    name: "Manju Mahadevi",
+    designation: "CEO & CTO @Leadxdeal",
     image:
       "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80",
   },
   {
     id: 2,
-    name: "Al Mehdi",
-    designation: "Agency Owner DigiVibes",
+    name: "Abhi Biswas",
+    designation: "Lead developer",
     image:
       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
   },

@@ -78,11 +78,11 @@ export default function FooterSection() {
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 flex flex-col items-center text-center justify-between">
         {/* Logo Section */}
         <div className="flex items-center justify-center gap-[1px] mb-16 sm:mb-20">
-          {/* Seed icon */}
+          {/* lead icon */}
           <div className="relative h-10 w-10 sm:h-10 sm:w-10">
             <Image
-              src="/images/seedd.png"
-              alt="leadxdeal seed icon"
+              src="/images/lead.png"
+              alt="leadxdeal icon"
               layout="fill"
               objectFit="contain"
               aria-hidden="true"
@@ -92,7 +92,7 @@ export default function FooterSection() {
           {/* Text logo */}
           <div className="relative w-[120px] h-12 sm:w-[140px] sm:h-14">
             <Image
-              src="/images/leadsvg.svg"
+              src="/images/leadtext.png"
               alt="leadxdeal"
               layout="fill"
               objectFit="contain"

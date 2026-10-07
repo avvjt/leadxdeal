@@ -19,7 +19,7 @@ export function MacbookScrollDemo() {
               Experience Seamless Looping Videos <br /> On This Macbook Display
             </span>
           }
-          src={`/videos/leadxdeal.mp4`}
+          src={`/videos/video.mp4`}
           showGradient={false}
         />
       </div>

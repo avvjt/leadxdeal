@@ -22,7 +22,7 @@ export function TimelineDemo() {
           </ul>
           <div className="grid grid-cols-1">
             <img
-              src="https://i.postimg.cc/tCcDLMyT/Frame-3.jpg"
+              src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&q=80"
               alt="Prospect import dashboard"
               className="w-full rounded-xl border object-cover shadow-lg md:h-96"
             />
@@ -48,7 +48,7 @@ export function TimelineDemo() {
           </ul>
           <div className="grid grid-cols-1">
             <img
-              src="https://i.postimg.cc/jdyLbWY7/Frame-4-2.jpg"
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80"
               alt="Campaign dashboard"
               className="w-full rounded-xl border object-cover shadow-lg md:h-96"
             />
@@ -76,7 +76,7 @@ export function TimelineDemo() {
           </ul>
           <div className="grid grid-cols-1">
             <img
-              src="https://i.postimg.cc/Z55235zM/Frame-7.jpg"
+              src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1600&q=80"
               alt="Personalization interface"
               className="w-full rounded-xl border object-cover shadow-lg md:h-96"
             />
@@ -102,7 +102,7 @@ export function TimelineDemo() {
           </ul>
           <div className="grid grid-cols-1">
             <img
-              src="https://i.postimg.cc/L8FBKyNB/Frame-5-2.jpg"
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80"
               alt="Automation dashboard"
               className="w-full rounded-xl border object-cover shadow-lg md:h-96"
             />

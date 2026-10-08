@@ -33,7 +33,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/blogs/page.jsx",
+    "app/case/page.jsx",
     "components/ui/apple-cards-carousel.tsx",
     "components/AppleCardsCarousel.tsx",
     "app/page.jsx",

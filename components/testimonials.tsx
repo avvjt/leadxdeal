@@ -1,156 +1,165 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+"use client";
+
+import { motion } from "framer-motion";
+import { Quote, ArrowUpRight } from "lucide-react";
+
+const testimonials = [
+  {
+    company: "Flowmetric",
+    industry: "SaaS",
+    quote:
+      "We went from 2–3 self-sourced demos a month to a full calendar of qualified conversations — without adding a single SDR headcount.",
+    featured: true,
+  },
+  {
+    company: "Ledgerway",
+    industry: "Fintech",
+    quote:
+      "LinkedIn reached compliance-cautious finance buyers who never picked up a cold call.",
+    featured: false,
+  },
+  {
+    company: "PeopleForge",
+    industry: "HR Tech",
+    quote:
+      "The qualification notes alone saved our AEs hours of discovery on every call.",
+    featured: false,
+  },
+  {
+    company: "Signalytics",
+    industry: "Martech",
+    quote:
+      "We finally have an outbound channel that didn’t require hiring and managing an SDR to run it.",
+    featured: false,
+  },
+];
 
 export default function Testimonials() {
   return (
-    <section className="py-16 md:py-32">
-      <div className="mx-auto max-w-6xl space-y-8 px-6 md:space-y-16">
-        <div className="relative z-10 mx-auto max-w-xl space-y-6 text-center md:space-y-12">
-          <h2 className="text-4xl font-medium lg:text-5xl">
-           It works for everyone. Including you
+    <section className="relative overflow-hidden bg-white py-20 dark:bg-[#050505] md:py-28 lg:py-32">
+      {/* Background */}
+      <div className="pointer-events-none absolute inset-0 bg-grid-gray-200 opacity-40 [mask-image:linear-gradient(180deg,white,transparent)] dark:bg-grid-gray-800 dark:opacity-30" />
+
+      {/* Glow */}
+      <div className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-[#E8FF00]/10 blur-[150px]" />
+
+      <div className="relative mx-auto max-w-6xl space-y-12 px-4 md:px-6 lg:space-y-16">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mx-auto max-w-3xl text-center"
+        >
+          {/* Badge */}
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-zinc-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-zinc-600 dark:border-white/10 dark:bg-white/[0.04] dark:text-zinc-300">
+            <span className="h-2 w-2 rounded-full bg-[#E8FF00] shadow-[0_0_12px_rgba(232,255,0,0.7)]" />
+            What Our Clients Say
+          </div>
+
+          <h2 className="text-4xl font-black tracking-tight text-black sm:text-5xl lg:text-6xl dark:text-white">
+            Real conversations.
+            <br />
+            <span className="relative inline-block">
+              Real outcomes.
+              <span className="absolute -bottom-1 left-0 h-1 w-full rounded-full bg-[#E8FF00]" />
+            </span>
           </h2>
-          <p>
-            Trusted by more than 1,000+ users in almost every industry and country.
+
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
+            See what the teams behind our representative case studies say
+            about building a more predictable outbound pipeline.
           </p>
+        </motion.div>
+
+        {/* Testimonial Grid */}
+        <div className="grid gap-5 md:grid-cols-2">
+          {testimonials.map((testimonial, index) => (
+            <motion.article
+              key={testimonial.company}
+              initial={{
+                opacity: 0,
+                y: 35,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.1,
+              }}
+              className={`group relative overflow-hidden rounded-[1.75rem] border border-zinc-200 bg-white p-7 transition-all duration-500 hover:-translate-y-1 hover:border-[#E8FF00]/50 hover:shadow-2xl dark:border-white/10 dark:bg-white/[0.035] dark:hover:bg-white/[0.05] sm:p-9 ${
+                testimonial.featured ? "md:p-10" : ""
+              }`}
+            >
+              {/* Hover glow */}
+              <div className="pointer-events-none absolute -right-20 -top-20 h-48 w-48 rounded-full bg-[#E8FF00]/10 opacity-0 blur-[70px] transition-opacity duration-500 group-hover:opacity-100" />
+
+              {/* Top accent */}
+              <div className="absolute left-0 top-0 h-[3px] w-0 bg-[#E8FF00] transition-all duration-500 group-hover:w-full" />
+
+              <div className="relative flex h-full flex-col">
+                {/* Quote icon */}
+                <div className="mb-8 flex items-start justify-between">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-zinc-200 bg-zinc-50 dark:border-white/10 dark:bg-white/[0.04]">
+                    <Quote className="h-5 w-5 text-black dark:text-[#E8FF00]" />
+                  </div>
+
+                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-zinc-400">
+                    <span>{testimonial.industry}</span>
+                    <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                  </div>
+                </div>
+
+                {/* Quote */}
+                <blockquote
+                  className={`flex-1 font-medium leading-relaxed text-zinc-800 dark:text-zinc-200 ${
+                    testimonial.featured
+                      ? "text-xl sm:text-2xl"
+                      : "text-lg sm:text-xl"
+                  }`}
+                >
+                  “{testimonial.quote}”
+                </blockquote>
+
+                {/* Company */}
+                <div className="mt-8 flex items-center gap-3 border-t border-zinc-200 pt-5 dark:border-white/10">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black text-sm font-black text-[#E8FF00] dark:bg-[#E8FF00] dark:text-black">
+                    {testimonial.company.charAt(0)}
+                  </div>
+
+                  <div>
+                    <div className="font-bold text-black dark:text-white">
+                      {testimonial.company}
+                    </div>
+
+                    <div className="text-xs text-zinc-500">
+                      LeadXDeal case study
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.article>
+          ))}
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-rows-2">
-          <Card className="grid grid-rows-[auto_1fr] gap-8 sm:col-span-2 sm:p-6 lg:row-span-2">
-            <CardHeader>
-              {/* <img
-                className="h-10 w-fit dark:invert"
-                // src="/images/lead.png"
-                // alt="Nike Logo"
-                height="24"
-                width="auto"
-              /> */}
-            </CardHeader>
-            <CardContent>
-              <blockquote className="grid h-full grid-rows-[1fr_auto] gap-6">
-                <p className="text-lg font-medium">
-                What truly impressed me was how naturally leadxdeal helped us connect with prospects on LinkedIn—without ever feeling pushy or salesy. Before scheduling a demo, the team actually reached out to me using their own automation solution, and the entire process felt unusually authentic and relevant. Unlike other tools that bombard connections with generic messages, leadxdeal enabled a sequence that felt personal and thoughtful every step of the way.
-
-The workflow is remarkably low-key: it prioritizes building real relationships over just pushing for a sale. This approach resonated so well that prospects responded much more openly, and it made our lead generation efforts feel more human. The ROI for our company has honestly exceeded all expectations—we closed a major enterprise client within the first month of implementation.
-
-
-                </p>
-
-                <div className="grid grid-cols-[auto_1fr] items-center gap-3">
-                  <Avatar className="size-12">
-                    <AvatarImage
-                      src="https://tailus.io/images/reviews/shekinah.webp"
-                      alt="Chirag Gupta"
-                      height="400"
-                      width="400"
-                      loading="lazy"
-                    />
-                    <AvatarFallback>CG</AvatarFallback>
-                  </Avatar>
-
-                  <div>
-                    <cite className="text-sm font-medium">
-                      Chirag Gupta
-                    </cite>
-                    <span className="text-muted-foreground block text-sm">
-                      CEO & CTO @BoloSign
-                    </span>
-                  </div>
-                </div>
-              </blockquote>
-            </CardContent>
-          </Card>
-          <Card className="md:col-span-2">
-            <CardContent className="h-full pt-6">
-              <blockquote className="grid h-full grid-rows-[1fr_auto] gap-6">
-                <p className="text-lg font-medium">
-                leadxdeal has truly transformed the way I generate leads and build my network on LinkedIn. I’ve been using it for six months, and it has significantly improved my outreach and expanded my professional connections. In my opinion, it’s the best budget-friendly alternative to Waalaxy and stands out compared to all the other expensive LinkedIn automation tools I’ve tried.
-                </p>
-
-                <div className="grid grid-cols-[auto_1fr] items-center gap-3">
-                  <Avatar className="size-12">
-                    <AvatarImage
-                      src="https://tailus.io/images/reviews/jonathan.webp"
-                      alt="AL Mehdi"
-                      height="400"
-                      width="400"
-                      loading="lazy"
-                    />
-                    <AvatarFallback>AM</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <cite className="text-sm font-medium">Al Mehdi</cite>
-                    <span className="text-muted-foreground block text-sm">
-                      Agency Owner DigiVibes
-                    </span>
-                  </div>
-                </div>
-              </blockquote>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="h-full pt-6">
-              <blockquote className="grid h-full grid-rows-[1fr_auto] gap-6">
-                <p>
-                  Love the software! Very easy to use and helps my led gen for my
-                  marketing agency a ton. Their customer success team did a great job in helping
-                  me navigate the product and helping me with my many questions.
-                </p>
-
-                <div className="grid items-center gap-3 [grid-template-columns:auto_1fr]">
-                  <Avatar className="size-12">
-                    <AvatarImage
-                      src="https://tailus.io/images/reviews/yucel.webp"
-                      alt="Eve Chan"
-                      height="400"
-                      width="400"
-                      loading="lazy"
-                    />
-                    <AvatarFallback>EC</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <cite className="text-sm font-medium">
-                      Eve Chan
-                    </cite>
-                    <span className="text-muted-foreground block text-sm">
-                      Founder, Growth Machine
-                    </span>
-                  </div>
-                </div>
-              </blockquote>
-            </CardContent>
-          </Card>
-          <Card className="card variant-mixed">
-            <CardContent className="h-full pt-6">
-              <blockquote className="grid h-full grid-rows-[1fr_auto] gap-6">
-                <p>
-                  A very robust automation layer has been set up on top of LI.
-                  Excellent service and support team. They have been proactive
-                  in figuring solutions to LI's problems and even for us when we
-                  faced any challenges.
-                </p>
-
-                <div className="grid grid-cols-[auto_1fr] gap-3">
-                  <Avatar className="size-12">
-                    <AvatarImage
-                      src="https://tailus.io/images/reviews/rodrigo.webp"
-                      alt="Muhammad Junaid"
-                      height="400"
-                      width="400"
-                      loading="lazy"
-                    />
-                    <AvatarFallback>MJ</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <p className="text-sm font-medium">Muhammad Junaid</p>
-                    <span className="text-muted-foreground block text-sm">
-                      Sales Manager, ikonicdev
-                    </span>
-                  </div>
-                </div>
-              </blockquote>
-            </CardContent>
-          </Card>
-        </div>
+        {/* Disclaimer */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mx-auto max-w-3xl text-center"
+        >
+          <p className="text-xs leading-6 text-zinc-500 dark:text-zinc-500">
+            These quotes are from the representative case-study scenarios
+            presented by LeadXDeal and are not presented as verified client
+            testimonials.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

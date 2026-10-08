@@ -7,7 +7,7 @@ import LogoCloud from "@/components/logo-cloud";
 import { MacbookScrollDemo } from "@/components/MacbookScrollDemo";
 import SomeFaq from "@/components/SomeFaq";
 import StatsSection from "@/components/stats";
-import WallOfLoveSection from "@/components/testimonials";
+import Testimonials from "@/components/testimonials";
 import { TimelineDemo } from "@/components/TimelineDemo";
 
 
@@ -16,12 +16,12 @@ export default function Home() {
     <>
       <HeroSection />
       <MacbookScrollDemo />
-      {/* <LogoCloud/> */}
+      <LogoCloud/>
       <TimelineDemo />
-      {/* <StatsSection /> */}
-      {/* <IntegrationsSection /> */}
-      {/* <AuroraBackgroundDemo/> */}
-      {/* <WallOfLoveSection /> */}
+      <StatsSection />
+      <IntegrationsSection />
+      <AuroraBackgroundDemo/>
+      <Testimonials />
       <SomeFaq />
       <FooterSection />
     </>

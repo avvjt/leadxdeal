@@ -1,281 +1,914 @@
 "use client";
 
+import React, { useMemo, useState } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { Search, X } from "lucide-react";
+
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import Link from "next/link";
-import React, { useState, useMemo } from "react";
-import { Search } from "lucide-react";
 
 type FAQItem = {
   id: string;
   question: string;
   answer: string;
-  section: string;
 };
 
-type FAQSection = {
-  title: string;
-  items: Omit<FAQItem, "section">[];
-};
-
-const faqSections: FAQSection[] = [
+const faqItems: FAQItem[] = [
   {
-    title: "About leadxdeal",
-    items: [
-      {
-        id: "about-1",
-        question:
-          "What makes leadxdeal different from other LinkedIn automation tools?",
-        answer:
-          "leadxdeal stands out through its AI-powered contextual engagement system that analyzes profiles and content to generate hyper-personalized outreach. Unlike basic automation tools that send generic messages, our platform studies each prospect's activity history, job changes, content engagement patterns, and shared connections to craft relevant messaging. We combine this with smart throttling algorithms that mimic human behavior patterns to maintain account safety. Additionally, our proprietary 'Relationship Heatmap' visually tracks engagement depth across your network, helping you prioritize high-value connections.",
-      },
-      {
-        id: "about-2",
-        question:
-          "How does leadxdeal ensure compliance with LinkedIn's terms of service?",
-        answer:
-          "We maintain strict compliance through a multi-layered approach: 1) Activity pacing that never exceeds LinkedIn's interaction limits (customized per account age and size), 2) Randomized engagement intervals that mimic human usage patterns, 3) Proprietary 'Stealth Mode' technology that routes activities through residential IP networks, 4) Regular algorithm updates based on LinkedIn's changing policies (we monitor 37+ signals daily), and 5) Built-in activity suspension when abnormal patterns are detected. Since 2023, our 12,000+ active users have maintained a 99.97% account safety rate.",
-      },
-      {
-        id: "about-3",
-        question: "What kind of customer support can I expect?",
-        answer:
-          "All plans include: 1) Dedicated onboarding specialist with 90-minute setup session, 2) 24/7 chat support with under 3-minute response times during business hours, 3) Weekly optimization webinars, and 4) Campaign health monitoring alerts. Enterprise clients receive a dedicated Customer Success Manager who conducts bi-weekly strategy reviews and provides custom performance reports. Our support team consists exclusively of LinkedIn automation experts with 3+ years experience - no generalized support staff.",
-      },
-    ],
+    id: "faq-01",
+    question:
+      "I’ve been burned by lead gen companies before. Why should I trust you?",
+    answer:
+      "That’s exactly why our model is built around your risk, not ours. There is no retainer, no management fee and no long-term contract. You pay £150 only when a meeting that meets your agreed six-point qualification criteria is on your calendar. We have been delivering lead generation and appointment setting since 2022, and we only earn when you win.",
   },
   {
-    title: "How It Works",
-    items: [
-      {
-        id: "work-1",
-        question: "What's the onboarding process timeline?",
-        answer:
-          "Our streamlined 4-phase onboarding: Day 1: Technical setup (15 min) - Install browser extension and grant API permissions. Days 2-3: Strategy session (60 min) - Define ICP, set campaign goals, and build target lists. Days 4-5: Campaign architecture (90 min) - Create message sequences and engagement rules. Day 6: Dry-run testing with monitoring. Day 7: Full activation with daily optimization alerts. Most users see first connections within 48 hours of activation, with full pipeline impact within 2-3 weeks.",
-      },
-      {
-        id: "work-2",
-        question: "How do you handle personalization at scale?",
-        answer:
-          "Our AI engine uses 14 data points per profile to generate unique messaging: 1) Career milestones analysis, 2) Content engagement patterns, 3) Skill endorsement gaps, 4) Mutual connections, 5) Job change triggers, 6) Post sentiment analysis, 7) Education/group affiliations, 8) Keyword density in profile, plus 6 proprietary signals. For 500+ contact campaigns, we implement dynamic template clusters with 5-7 message variations that adapt based on recipient industry, seniority, and engagement history. Each message includes at least 3 personalized elements validated by our quality scoring system.",
-      },
-      {
-        id: "work-3",
-        question: "Can I integrate with my existing tech stack?",
-        answer:
-          "Yes, leadxdeal offers native integrations with: CRM (Salesforce, HubSpot, Pipedrive), Marketing Automation (Marketo, Mailchimp), Calendar (Calendly, Google Calendar), and Data Enrichment (Clearbit, ZoomInfo). Our open API supports custom integrations - popular use cases include syncing engaged leads to Slack channels, pushing LinkedIn activity data to BI tools, and triggering webinar invites based on engagement level. Setup takes under 10 minutes for standard integrations using OAuth authentication.",
-      },
-    ],
+    id: "faq-02",
+    question:
+      "What happens to my setup fee if you can’t deliver?",
+    answer:
+      "The £900 one-time setup funds the work of building your campaign: ICP research, messaging, outreach infrastructure, CRM/calendar integration and launch. After that, there is nothing to forfeit: if the campaign underperforms, you simply receive fewer billed meetings, not a sunk salary. We stay accountable by optimising continuously until the volume target is hit.",
   },
   {
-    title: "Billing & Plans",
-    items: [
-      {
-        id: "billing-1",
-        question: "What's included in the different pricing tiers?",
-        answer:
-          "Starter ($99/mo): 200 monthly connections, basic personalization, email support. Growth ($249/mo): 750 connections, AI personalization, CRM sync, priority support. Pro ($499/mo): 2,000 connections, advanced analytics, dedicated IP, custom workflows. Enterprise (custom): Unlimited connections, SAML SSO, dedicated account team, API access. All plans include: Chrome extension, basic reporting, LinkedIn compliance protection, and daily activity monitoring. Enterprise adds: Custom AI model training, SOC 2 compliance, and Uptime SLA.",
-      },
-      {
-        id: "billing-2",
-        question: "Are there contracts or long-term commitments?",
-        answer:
-          "No - all plans are month-to-month with cancel-anytime flexibility. We offer 17% discount for annual prepayment. Enterprise agreements typically have 12-month terms but include 90-day exit clauses with data portability guarantee. Important: We never require payment information for free trials, and all subscriptions include 14-day money-back guarantee with prorated refunds for unused service periods.",
-      },
-      {
-        id: "billing-3",
-        question: "How do you handle plan upgrades/downgrades?",
-        answer:
-          "Upgrades: Immediate access to new features, pro-rated charge based on remaining billing cycle. Downgrades: Take effect at next billing date with configuration preservation. Usage limits reset monthly on your billing anniversary date. Critical: When approaching connection limits (80%+ utilization), we send 3 alerts before pausing outreach. You can purchase one-time connection packs ($0.35/connection) to avoid interruptions between cycles.",
-      },
-    ],
+    id: "faq-03",
+    question:
+      "£150 per meeting sounds expensive. What’s the actual ROI?",
+    answer:
+      "Compare it with the alternative. One in-house SDR costs £34k–£75k a year before overheads, with unpredictable output and a typical cost of £300–£600+ per meeting. At £150 per qualified meeting, a campaign delivering 24 meetings costs £4,500 in month one including setup. In our Flowmetric scenario that supported £96,000 in new annual contract value, over 21 times the spend. You need to close very few deals for the maths to work.",
   },
   {
-    title: "Product Features",
-    items: [
-      {
-        id: "features-1",
-        question: "What targeting capabilities do you offer?",
-        answer:
-          "Our targeting engine includes 8 dimensions: 1) Geographic (country/region/radius around zip), 2) Company (size, industry, tech stack), 3) Role (seniority, function, years in position), 4) Experience (skills, certifications), 5) Engagement (content posters, active commenters), 6) Intent (job changers, skill learners), 7) Relationship (2nd/3rd degree, group members), and 8) Custom Boolean search. Unique features: 'Competitor Employee' targeting, 'Recent Funding Round' filters, and 'Technology Adoption' scoring based on profile keywords.",
-      },
-      {
-        id: "features-2",
-        question: "How do your messaging sequences work?",
-        answer:
-          "Sequences combine 4 touchpoints across channels: 1) Connection request with personalized note, 2) LinkedIn message follow-up, 3) Email outreach (using pattern-matched addresses), 4) Content engagement (like/comment on recent posts). Our Smart Sequencing™ engine dynamically adjusts paths based on engagement: If a prospect views your profile, it triggers a different follow-up than if they like your post. Sequences automatically expire after 21 days of inactivity, and include built-in 'Do Not Contact' suppression for existing customers.",
-      },
-      {
-        id: "features-3",
-        question: "What analytics and reporting do you provide?",
-        answer:
-          "Dashboard includes: 1) Connection rate analytics (industry/role benchmarks), 2) Message performance heatmaps (best days/times), 3) Response sentiment analysis, 4) Profile view-to-connection conversion tracking, 5) Lead pipeline impact (CRM-sourced deals), and 6) ROI calculator. Custom reports: Exportable CSV with 45+ data points per interaction, including link tracking, engagement duration, and estimated influence score. Premium users get weekly performance optimization recommendations via email.",
-      },
-    ],
+    id: "faq-04",
+    question:
+      "What if I pay for meetings but can’t close them?",
+    answer:
+      "Every meeting is pre-qualified against your own ICP and BANT criteria, and you receive full context on each prospect, so your team walks in prepared. We also review outcomes with you and keep refining targeting and messaging. If a meeting does not meet the agreed criteria, it is not a qualified meeting, and you do not pay for it.",
   },
   {
-    title: "Privacy & Security",
-    items: [
-      {
-        id: "privacy-1",
-        question: "How is my LinkedIn account data protected?",
-        answer:
-          "We employ: 1) AES-256 encryption at rest and in transit, 2) Zero-knowledge architecture (we never store LinkedIn credentials), 3) GDPR-compliant data processing agreements, 4) SOC 2 Type II certified infrastructure, 5) Quarterly third-party penetration testing. All access uses official LinkedIn API endpoints with OAuth 2.0 authentication. Activity data is pseudonymized after 30 days and fully anonymized after 90 days. You retain full ownership of your connection data with right-to-delete guarantees.",
-      },
-      {
-        id: "privacy-2",
-        question: "What data do you collect from my prospects?",
-        answer:
-          "We collect only public profile data explicitly permitted by LinkedIn's API: Name, headline, current position, industry, and public posts. We never scrape emails or private contact information. For email outreach, we use pattern-matching algorithms (firstname@company.com) with 92% accuracy, but never store unverified addresses. Our system automatically opts out prospects upon request and maintains global suppression lists to prevent re-engagement.",
-      },
-      {
-        id: "privacy-3",
-        question: "Where are your servers located?",
-        answer:
-          "Primary infrastructure is on Google Cloud Platform in Iowa, USA (us-central1 region) with failover to Frankfurt, Germany (europe-west3). All data residency complies with local regulations: EU data remains in Frankfurt, APAC in Singapore (asia-southeast1), and Americas in Iowa. We maintain ISO 27001 certification and undergo annual privacy audits by third-party firms. Backups are encrypted and distributed across 3 geographic regions with 30-day retention.",
-      },
-    ],
+    id: "faq-05",
+    question:
+      "How exactly does the outreach work? Is it spammy?",
+    answer:
+      "No. We build small, highly targeted lists of the right decision-makers, then reach them with personalised LinkedIn messages, relevant email sequences and calls from trained callers. Every campaign is built around a specific pain point for a specific role, and every reply is handled by a person.",
   },
   {
-    title: "Results & Performance",
-    items: [
-      {
-        id: "results-1",
-        question: "What results do typical users see?",
-        answer:
-          "Benchmarks across 8,000 campaigns (2025 data): Average 27% connection acceptance rate (vs. 8% manual), 12% response rate to first message, 4.2% booked meeting rate. Sales teams report 5-8X pipeline expansion within 90 days. Top performers achieve: 42%+ acceptance using our Industry Group Targeting, 18% response rates with Video Impression triggers, and 9% meeting rates via our 'Social Proof' messaging templates. Actual results vary based on target quality and message personalization depth.",
-      },
-      {
-        id: "results-2",
-        question: "How quickly can I expect to see results?",
-        answer:
-          "Timeline: Days 1-3: Account warm-up phase (graduated activity increase). Days 4-7: Initial connections and profile views. Week 2: First responses and meetings booked. Week 3-4: Pipeline velocity acceleration. Most users generate 2-5 qualified opportunities in first 30 days. For fastest results: 1) Complete our Optimization Certification, 2) Leverage our Template Library, and 3) Enable Content Engagement features. Enterprise clients average 11.7 opportunities/month starting at day 45.",
-      },
-      {
-        id: "results-3",
-        question: "Do you offer performance guarantees?",
-        answer:
-          "Yes - our Pipeline Guarantee: If you follow our best practices (verified by onboarding specialist) and don't generate at least 3 qualified opportunities in first 60 days, we'll extend your service free until you do. Additional protections: Account Safety Warranty (if restricted by LinkedIn due to our tool, we provide $5,000 mitigation support), and Delivery SLA (99.9% uptime with service credits for outages). These guarantees require minimum 500 monthly connection attempts and use of approved messaging templates.",
-      },
-    ],
+    id: "faq-06",
+    question:
+      "How will I receive meetings and how quickly?",
+    answer:
+      "Qualified prospects are booked directly into your calendar, with CRM and calendar automation handling the admin. Campaigns typically launch in 1–2 weeks, and our objective is 20–30+ qualified meetings a month depending on your market, ICP, offer and geography.",
+  },
+  {
+    id: "faq-07",
+    question:
+      "What if I get more meetings than I can handle?",
+    answer:
+      "A good problem to have. We can pace the volume to your team’s capacity, and scale back up as soon as you are ready. Because there is no retainer or long-term contract, you stay in control.",
+  },
+  {
+    id: "faq-08",
+    question:
+      "Why is there no long-term contract? What if I want out early?",
+    answer:
+      "We believe results should keep you, not paperwork. There is no lock-in and no minimum commitment: you pay the one-time setup and then per qualified meeting. If you decide to stop, you stop.",
+  },
+  {
+    id: "faq-09",
+    question:
+      "Are there any hidden fees or surprise costs?",
+    answer:
+      "None. The price is £900 one-time setup plus £150 per qualified meeting. No retainers, no management fees, no ad campaign fees, no payment for unqualified prospects.",
+  },
+  {
+    id: "faq-10",
+    question:
+      "What’s actually included in the setup fee?",
+    answer:
+      "ICP and market research, target-account definition, messaging strategy, multi-channel outreach infrastructure, campaign setup, CRM/calendar integration, your qualification framework and campaign launch. The tools and data stack behind it (LinkedIn, Clay, Brevo, Apollo.io, ZoomInfo) is part of how we run every campaign.",
+  },
+  {
+    id: "faq-11",
+    question:
+      "What makes you different from lead lists and lead marketplaces?",
+    answer:
+      "Lists and marketplaces sell contacts, often to several buyers at once. We create conversations. Every lead is exclusive, human-qualified against the six-point framework, and delivered as a booked meeting rather than a spreadsheet row.",
+  },
+  {
+    id: "faq-12",
+    question:
+      "What if my market is already crowded?",
+    answer:
+      "Crowded markets are where a personalised, multi-channel approach stands out most. Book a free strategy call and we will assess your market, your ICP and the best angle before you commit to anything.",
+  },
+  {
+    id: "faq-13",
+    question:
+      "How do I know these case studies are real?",
+    answer:
+      "The case studies in this document are representative scenarios that show how our process and pricing work in practice, and they are labelled that way. We would rather be transparent than overstate. On a strategy call we will walk you through our methodology, the campaign build and the economics for your own market, so you can judge the fit before you spend anything.",
   },
 ];
 
 export default function FAQsTwo() {
   const [search, setSearch] = useState("");
 
-  // Flatten FAQs for search
-  const allFaqs: FAQItem[] = useMemo(
-    () =>
-      faqSections.flatMap((section) =>
-        section.items.map((item) => ({
-          ...item,
-          section: section.title,
-        }))
-      ),
-    []
-  );
+  const filteredFaqs = useMemo(() => {
+    const term = search.trim().toLowerCase();
 
-  // Filter FAQs by search term
-  const filteredFaqs: FAQItem[] = useMemo(() => {
-    if (!search.trim()) return allFaqs;
-    const term = search.toLowerCase();
-    return allFaqs.filter(
+    if (!term) {
+      return faqItems;
+    }
+
+    return faqItems.filter(
       (faq) =>
         faq.question.toLowerCase().includes(term) ||
         faq.answer.toLowerCase().includes(term)
     );
-  }, [search, allFaqs]);
-
-  // Group filtered FAQs by section
-  const groupedFaqs: Record<string, FAQItem[]> = useMemo(() => {
-    const groups: Record<string, FAQItem[]> = {};
-    filteredFaqs.forEach((faq) => {
-      if (!groups[faq.section]) groups[faq.section] = [];
-      groups[faq.section].push(faq);
-    });
-    return groups;
-  }, [filteredFaqs]);
-
-  const email = "vidit@leadxdeal.co";
-  const subject = "Request for a Meeting";
-  const body =
-    "Hello, I couldn't find a suitable time on your calendar. Can we schedule a meeting at a time convenient for you?";
-
-  const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-    subject
-  )}&body=${encodeURIComponent(body)}`;
+  }, [search]);
 
   return (
-    <section className="py-16 md:py-24 bg-background">
-      <div className="mx-auto max-w-5xl px-4 md:px-6">
-        <div className="mb-10 flex flex-col items-center">
-          <div className="relative w-full max-w-lg">
-            <Search
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground"
-              size={20}
+    <section
+      id="faq"
+      className="
+        relative
+        overflow-hidden
+        border-t
+        border-neutral-200
+        bg-white
+        py-20
+        text-neutral-900
+        dark:border-white/[0.06]
+        dark:bg-[#0a0a0a]
+        dark:text-white
+        md:py-28
+      "
+    >
+      {/* ================================
+          BACKGROUND
+      ================================= */}
+
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        {/* Grid */}
+        <div
+          className="
+            absolute inset-0
+            opacity-[0.025]
+            dark:opacity-[0.035]
+          "
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(0,0,0,0.8) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(0,0,0,0.8) 1px, transparent 1px)
+            `,
+            backgroundSize: "48px 48px",
+          }}
+        />
+
+        {/* Lime glow */}
+        <motion.div
+          animate={{
+            x: [0, 80, -40, 0],
+            y: [0, -40, 35, 0],
+            scale: [1, 1.1, 0.95, 1],
+          }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="
+            absolute
+            left-[10%]
+            top-[-250px]
+            h-[550px]
+            w-[550px]
+            rounded-full
+            bg-[#E8FF00]/[0.045]
+            blur-[130px]
+          "
+        />
+
+        {/* Blue glow */}
+        <motion.div
+          animate={{
+            x: [0, -70, 40, 0],
+            y: [0, 50, -30, 0],
+          }}
+          transition={{
+            duration: 16,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="
+            absolute
+            right-[-220px]
+            top-[45%]
+            h-[500px]
+            w-[500px]
+            rounded-full
+            bg-blue-500/[0.04]
+            blur-[130px]
+          "
+        />
+
+        {/* Vignette */}
+        <div
+          className="
+            absolute inset-0
+            bg-[radial-gradient(circle_at_center,transparent_15%,rgba(255,255,255,0.7)_100%)]
+            dark:bg-[radial-gradient(circle_at_center,transparent_20%,rgba(0,0,0,0.72)_100%)]
+          "
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-5xl px-5 sm:px-8">
+        {/* ================================
+            HEADER
+        ================================= */}
+
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 25,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.25,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
+          className="mx-auto max-w-3xl text-center"
+        >
+          {/* Badge */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              scale: 0.9,
+            }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.5,
+            }}
+            className="
+              mb-6
+              inline-flex
+              items-center
+              gap-2
+              rounded-full
+              border
+              border-neutral-200
+              bg-white/80
+              px-4
+              py-2
+              text-xs
+              font-bold
+              uppercase
+              tracking-[0.2em]
+              text-neutral-600
+              backdrop-blur-md
+              dark:border-white/10
+              dark:bg-white/[0.035]
+              dark:text-neutral-300
+            "
+          >
+            <span
+              className="
+                h-2
+                w-2
+                rounded-full
+                bg-[#E8FF00]
+                shadow-[0_0_12px_rgba(232,255,0,0.9)]
+              "
             />
+
+            Common Questions
+          </motion.div>
+
+          {/* Heading */}
+          <h2
+            className="
+              text-4xl
+              font-black
+              tracking-[-0.045em]
+              text-neutral-950
+              sm:text-5xl
+              md:text-6xl
+              dark:text-white
+            "
+          >
+            FAQs about{" "}
+            <span
+              className="
+                text-[#7f9200]
+                dark:text-[#E8FF00]
+              "
+            >
+              LeadXDeal
+            </span>
+          </h2>
+
+          <p
+            className="
+              mx-auto
+              mt-5
+              max-w-2xl
+              text-base
+              leading-7
+              text-neutral-500
+              sm:text-lg
+              dark:text-neutral-400
+            "
+          >
+            Get answers to the most common questions.
+          </p>
+        </motion.div>
+
+        {/* ================================
+            SEARCH
+        ================================= */}
+
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            duration: 0.6,
+            delay: 0.1,
+          }}
+          className="mx-auto mt-10 max-w-2xl"
+        >
+          <div className="relative">
+            <Search
+              className="
+                pointer-events-none
+                absolute
+                left-4
+                top-1/2
+                h-5
+                w-5
+                -translate-y-1/2
+                text-neutral-400
+                dark:text-neutral-500
+              "
+            />
+
             <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search questions..."
-              className="w-full rounded-lg border px-10 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-primary transition"
+              className="
+                h-14
+                w-full
+                rounded-2xl
+                border
+                border-neutral-200
+                bg-white/80
+                pl-12
+                pr-12
+                text-sm
+                text-neutral-900
+                outline-none
+                backdrop-blur-xl
+                transition-all
+                duration-300
+                placeholder:text-neutral-400
+                focus:border-[#E8FF00]/60
+                focus:shadow-[0_0_30px_rgba(232,255,0,0.08)]
+                dark:border-white/[0.1]
+                dark:bg-white/[0.035]
+                dark:text-white
+                dark:placeholder:text-neutral-500
+                dark:focus:border-[#E8FF00]/40
+              "
             />
-          </div>
-        </div>
 
-        <div className="mt-12 space-y-16">
-          {Object.keys(groupedFaqs).length === 0 && (
-            <div className="text-center text-muted-foreground text-xl py-12">
-              No matching questions found. Try a different search term.
-            </div>
-          )}
-
-          {Object.entries(groupedFaqs).map(
-            ([sectionTitle, items]: [string, FAQItem[]]) => (
-              <div key={sectionTitle}>
-                <h3 className="text-left text-3xl font-bold lg:text-4xl mb-4">
-                  {sectionTitle}
-                </h3>
-                <Accordion type="single" collapsible className="w-full">
-                  {items.map((item) => (
-                    <AccordionItem
-                      key={item.id}
-                      value={item.id}
-                      className="border-b border-dashed py-4"
-                    >
-                      <AccordionTrigger className="cursor-pointer justify-start text-left text-2xl font-semibold hover:no-underline px-0 [&[data-state=open]>svg]:rotate-180">
-                        <span className="mr-2 flex-1 text-left">
-                          {item.question}
-                        </span>
-                      </AccordionTrigger>
-                      <AccordionContent className="px-0">
-                        <p className="text-lg">{item.answer}</p>
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </div>
-            )
-          )}
-
-          <div className="mt-16 text-center">
-            <p className="text-muted-foreground">
-              Can&apos;t find what you&apos;re looking for? Contact our{" "}
-              <a
-                href={mailtoLink}
-                className="text-primary font-medium hover:underline"
+            {search && (
+              <button
+                type="button"
+                onClick={() => setSearch("")}
+                aria-label="Clear search"
+                className="
+                  absolute
+                  right-4
+                  top-1/2
+                  flex
+                  h-7
+                  w-7
+                  -translate-y-1/2
+                  items-center
+                  justify-center
+                  rounded-full
+                  bg-neutral-100
+                  text-neutral-500
+                  transition-colors
+                  hover:bg-neutral-200
+                  hover:text-neutral-900
+                  dark:bg-white/[0.08]
+                  dark:hover:bg-white/[0.14]
+                  dark:hover:text-white
+                "
               >
-                customer support team
-              </a>
-            </p>
+                <X className="h-3.5 w-3.5" />
+              </button>
+            )}
           </div>
-        </div>
+
+          {/* Search result count */}
+          <div className="mt-3 flex justify-between px-1 text-xs text-neutral-400 dark:text-neutral-500">
+            <span>
+              {search
+                ? `${filteredFaqs.length} ${
+                    filteredFaqs.length === 1
+                      ? "question"
+                      : "questions"
+                  } found`
+                : `${faqItems.length} common questions`}
+            </span>
+
+            {search && (
+              <button
+                type="button"
+                onClick={() => setSearch("")}
+                className="font-semibold text-neutral-600 hover:text-[#7f9200] dark:text-neutral-400 dark:hover:text-[#E8FF00]"
+              >
+                Clear search
+              </button>
+            )}
+          </div>
+        </motion.div>
+
+        {/* ================================
+            FAQ ACCORDION
+        ================================= */}
+
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.05,
+          }}
+          transition={{
+            duration: 0.8,
+            delay: 0.15,
+          }}
+          className="mx-auto mt-12 max-w-4xl"
+        >
+          {filteredFaqs.length === 0 ? (
+            <motion.div
+              initial={{
+                opacity: 0,
+                scale: 0.97,
+              }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+              }}
+              className="
+                rounded-3xl
+                border
+                border-neutral-200
+                bg-neutral-50/70
+                px-6
+                py-14
+                text-center
+                dark:border-white/[0.08]
+                dark:bg-white/[0.025]
+              "
+            >
+              <div
+                className="
+                  mx-auto
+                  flex
+                  h-14
+                  w-14
+                  items-center
+                  justify-center
+                  rounded-2xl
+                  bg-[#E8FF00]/10
+                  text-[#7f9200]
+                  dark:text-[#E8FF00]
+                "
+              >
+                <Search className="h-6 w-6" />
+              </div>
+
+              <h3 className="mt-5 text-xl font-black text-neutral-950 dark:text-white">
+                No matching questions
+              </h3>
+
+              <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-neutral-500 dark:text-neutral-400">
+                We couldn't find an FAQ matching your search. Try a different
+                keyword such as pricing, meetings, setup, outreach or contract.
+              </p>
+
+              <button
+                type="button"
+                onClick={() => setSearch("")}
+                className="
+                  mt-6
+                  rounded-full
+                  bg-[#E8FF00]
+                  px-5
+                  py-2.5
+                  text-sm
+                  font-black
+                  text-black
+                  transition-all
+                  hover:-translate-y-0.5
+                  hover:bg-[#dfff00]
+                "
+              >
+                Show All Questions
+              </button>
+            </motion.div>
+          ) : (
+            <Accordion
+              type="single"
+              collapsible
+              className="w-full"
+            >
+              {filteredFaqs.map((faq, index) => (
+                <AccordionItem
+                  key={faq.id}
+                  value={faq.id}
+                  className="
+                    group
+                    relative
+                    mb-3
+                    overflow-hidden
+                    rounded-2xl
+                    border
+                    border-neutral-200
+                    bg-white/70
+                    px-5
+                    transition-all
+                    duration-300
+                    hover:border-neutral-300
+                    hover:shadow-[0_15px_45px_rgba(0,0,0,0.05)]
+                    dark:border-white/[0.08]
+                    dark:bg-white/[0.025]
+                    dark:hover:border-white/[0.14]
+                    dark:hover:bg-white/[0.04]
+                  "
+                >
+                  {/* Animated accent */}
+                  <div
+                    className="
+                      absolute
+                      left-0
+                      top-0
+                      h-full
+                      w-[2px]
+                      origin-top
+                      scale-y-0
+                      bg-gradient-to-b
+                      from-[#E8FF00]
+                      to-blue-500
+                      transition-transform
+                      duration-500
+                      group-data-[state=open]:scale-y-100
+                    "
+                  />
+
+                  <motion.div
+                    initial={{
+                      scaleX: 0,
+                    }}
+                    whileInView={{
+                      scaleX: 1,
+                    }}
+                    viewport={{
+                      once: true,
+                    }}
+                    transition={{
+                      duration: 0.5,
+                      delay: Math.min(index * 0.025, 0.25),
+                    }}
+                    className="
+                      absolute
+                      left-0
+                      top-0
+                      h-px
+                      w-full
+                      origin-left
+                      bg-gradient-to-r
+                      from-transparent
+                      via-[#E8FF00]/30
+                      to-transparent
+                    "
+                  />
+
+                  <AccordionTrigger
+                    className="
+                      group/trigger
+                      flex
+                      w-full
+                      items-center
+                      gap-4
+                      py-6
+                      text-left
+                      hover:no-underline
+                      [&>svg]:hidden
+                    "
+                  >
+                    {/* Number */}
+                    <span
+                      className="
+                        flex
+                        h-9
+                        w-9
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-xl
+                        border
+                        border-neutral-200
+                        bg-neutral-50
+                        text-[10px]
+                        font-black
+                        tracking-wide
+                        text-neutral-400
+                        transition-all
+                        duration-300
+                        group-hover/trigger:border-[#E8FF00]/40
+                        group-hover/trigger:text-neutral-700
+                        dark:border-white/10
+                        dark:bg-white/[0.03]
+                        dark:text-neutral-500
+                        dark:group-hover/trigger:text-[#E8FF00]
+                      "
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    {/* Question */}
+                    <span
+                      className="
+                        flex-1
+                        pr-2
+                        text-base
+                        font-bold
+                        leading-6
+                        tracking-tight
+                        text-neutral-900
+                        transition-colors
+                        duration-300
+                        group-hover/trigger:text-neutral-950
+                        dark:text-white
+                        dark:group-hover/trigger:text-white
+                        sm:text-lg
+                        sm:leading-7
+                      "
+                    >
+                      {faq.question}
+                    </span>
+
+                    {/* Plus / minus */}
+                    <span
+                      className="
+                        relative
+                        flex
+                        h-9
+                        w-9
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-full
+                        border
+                        border-neutral-200
+                        bg-neutral-50
+                        transition-all
+                        duration-300
+                        group-hover/trigger:border-[#E8FF00]/50
+                        group-hover/trigger:bg-[#E8FF00]/10
+                        dark:border-white/10
+                        dark:bg-white/[0.03]
+                        dark:group-hover/trigger:border-[#E8FF00]/40
+                      "
+                    >
+                      <span
+                        className="
+                          absolute
+                          h-px
+                          w-3.5
+                          bg-neutral-500
+                          transition-transform
+                          duration-300
+                          dark:bg-neutral-400
+                        "
+                      />
+
+                      <span
+                        className="
+                          absolute
+                          h-3.5
+                          w-px
+                          bg-neutral-500
+                          transition-transform
+                          duration-300
+                          group-data-[state=open]/trigger:rotate-90
+                          dark:bg-neutral-400
+                        "
+                      />
+                    </span>
+                  </AccordionTrigger>
+
+                  <AccordionContent
+                    className="
+                      pb-7
+                      pl-[52px]
+                      pr-2
+                    "
+                  >
+                    <div
+                      className="
+                        border-l-2
+                        border-[#E8FF00]/30
+                        pl-5
+                        text-sm
+                        leading-7
+                        text-neutral-500
+                        dark:text-neutral-400
+                        sm:text-base
+                        sm:leading-7
+                      "
+                    >
+                      {faq.answer}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          )}
+        </motion.div>
+
+        {/* ================================
+            BOTTOM CTA
+        ================================= */}
+
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 25,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
+          className="
+            relative
+            mx-auto
+            mt-16
+            max-w-4xl
+            overflow-hidden
+            rounded-3xl
+            border
+            border-[#E8FF00]/20
+            bg-[#E8FF00]/[0.045]
+            p-8
+            text-center
+            dark:bg-[#E8FF00]/[0.03]
+            sm:p-10
+          "
+        >
+          {/* Glow */}
+          <motion.div
+            animate={{
+              scale: [1, 1.15, 1],
+              opacity: [0.3, 0.5, 0.3],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="
+              pointer-events-none
+              absolute
+              left-1/2
+              top-[-100px]
+              h-[250px]
+              w-[400px]
+              -translate-x-1/2
+              rounded-full
+              bg-[#E8FF00]/10
+              blur-[80px]
+            "
+          />
+
+          <div className="relative">
+            <p
+              className="
+                text-xs
+                font-bold
+                uppercase
+                tracking-[0.2em]
+                text-neutral-400
+                dark:text-neutral-500
+              "
+            >
+              Still have questions?
+            </p>
+
+            <h3
+              className="
+                mt-3
+                text-2xl
+                font-black
+                tracking-tight
+                text-neutral-950
+                sm:text-3xl
+                dark:text-white
+              "
+            >
+              Let&apos;s talk about your market.
+            </h3>
+
+            <p
+              className="
+                mx-auto
+                mt-3
+                max-w-xl
+                text-sm
+                leading-6
+                text-neutral-500
+                dark:text-neutral-400
+              "
+            >
+              Book a free strategy call and we&apos;ll assess your ICP, market
+              and the best angle before you commit to anything.
+            </p>
+
+            <Link
+              href="/book-a-call"
+              className="
+                mt-6
+                inline-flex
+                items-center
+                gap-2
+                rounded-full
+                bg-[#E8FF00]
+                px-7
+                py-3.5
+                text-sm
+                font-black
+                text-black
+                shadow-[0_0_30px_rgba(232,255,0,0.15)]
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                hover:bg-[#dfff00]
+                hover:shadow-[0_0_45px_rgba(232,255,0,0.35)]
+              "
+            >
+              Book My Free Strategy Call
+
+              <motion.span
+                initial={{ x: 0 }}
+                whileHover={{ x: 4 }}
+                transition={{ duration: 0.2 }}
+              >
+                →
+              </motion.span>
+            </Link>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

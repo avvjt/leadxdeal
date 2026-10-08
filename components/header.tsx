@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { Menu, X } from "lucide-react";
@@ -9,11 +10,14 @@ import { ModeToggle } from "./mode-toggle";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 
 const menuItems = [
-  { name: "Pricing", href: "/dev" },
-  { name: "Faq", href: "/faq" },
-  { name: "Blogs", href: "/dev" },
-  { name: "Book a call", href: "/book-a-call" },
+  { name: "Pricing", href: "/pricing" },
+  { name: "FAQ", href: "/faq" },
+  { name: "Case Studies", href: "/case" },
+  { name: "Book a Call", href: "/book-a-call" },
 ];
+
+const INTERCOM_HELP_URL =
+  "https://intercom.help/leadxdeal-d062fd4f1bbf/en/articles/11736915-connecting-your-linkedin-account-using-the-leadxdeal-extension";
 
 export const HeroHeader = () => {
   const [menuState, setMenuState] = React.useState(false);
@@ -26,7 +30,9 @@ export const HeroHeader = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
+
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -63,55 +69,74 @@ export const HeroHeader = () => {
   return (
     <header>
       <nav
-        ref={navRef} 
-        data-state={menuState && "active"}
+        ref={navRef}
+        data-state={menuState ? "active" : "inactive"}
         className="fixed z-20 w-full px-2"
       >
         <div
           className={cn(
             "mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12",
             isScrolled &&
-              "bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5"
+              "max-w-4xl rounded-2xl border border-black/10 bg-background/70 backdrop-blur-xl lg:px-5 dark:border-white/10"
           )}
         >
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
+            {/* Logo + Mobile menu */}
             <div className="flex w-full justify-between lg:w-auto">
               <Link
                 href="/"
-                aria-label="home"
+                aria-label="LeadXDeal home"
                 className="flex items-center space-x-2"
+                onClick={handleMenuItemClick}
               >
-                <span>
-                  <Logo />
-                </span>
+                <Logo />
               </Link>
 
               <button
                 onClick={() => setMenuState(!menuState)}
-                aria-label={menuState == true ? "Close Menu" : "Open Menu"}
+                aria-label={menuState ? "Close Menu" : "Open Menu"}
+                aria-expanded={menuState}
                 className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
               >
-                <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-                <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
+                <Menu
+                  className={cn(
+                    "m-auto size-6 transition-all duration-200",
+                    menuState
+                      ? "scale-0 rotate-180 opacity-0"
+                      : "scale-100 rotate-0 opacity-100"
+                  )}
+                />
+
+                <X
+                  className={cn(
+                    "absolute inset-0 m-auto size-6 transition-all duration-200",
+                    menuState
+                      ? "scale-100 rotate-0 opacity-100"
+                      : "scale-0 -rotate-180 opacity-0"
+                  )}
+                />
               </button>
             </div>
 
+            {/* Desktop navigation */}
             <div className="absolute inset-0 m-auto hidden size-fit lg:block">
               <ul className="flex gap-8 text-sm">
                 {menuItems.map((item) => (
                   <li key={item.name}>
                     <Link
                       href={item.href}
+                      onClick={handleMenuItemClick}
                       className={cn(
-                        "text-muted-foreground hover:text-accent-foreground block duration-150 relative group",
+                        "group relative block text-muted-foreground duration-150 hover:text-accent-foreground",
                         isActive(item.href) &&
-                          "text-accent-foreground font-medium"
+                          "font-medium text-accent-foreground"
                       )}
                     >
                       <span className="relative inline-block">
                         {item.name}
+
                         {!isActive(item.href) && (
-                          <span className="absolute left-0 bottom-0 h-0.5 bg-current w-0 transition-all duration-300 group-hover:w-full"></span>
+                          <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-current transition-all duration-300 group-hover:w-full" />
                         )}
                       </span>
                     </Link>
@@ -120,8 +145,17 @@ export const HeroHeader = () => {
               </ul>
             </div>
 
-            <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
-              <div className="lg:hidden">
+            {/* Actions */}
+            <div
+              className={cn(
+                "mb-6 hidden w-full flex-wrap items-center justify-end rounded-3xl border bg-background p-6 shadow-2xl shadow-zinc-300/20",
+                "lg:m-0 lg:flex lg:w-fit lg:gap-5 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none",
+                menuState && "flex",
+                "dark:shadow-none"
+              )}
+            >
+              {/* Mobile navigation */}
+              <div className="w-full lg:hidden">
                 <ul className="space-y-6 text-base">
                   {menuItems.map((item) => (
                     <li key={item.name}>
@@ -129,15 +163,16 @@ export const HeroHeader = () => {
                         href={item.href}
                         onClick={handleMenuItemClick}
                         className={cn(
-                          "text-muted-foreground hover:text-accent-foreground block duration-150 relative group",
+                          "group relative block text-muted-foreground duration-150 hover:text-accent-foreground",
                           isActive(item.href) &&
-                            "text-accent-foreground font-medium"
+                            "font-medium text-accent-foreground"
                         )}
                       >
                         <span className="relative inline-block">
                           {item.name}
+
                           {!isActive(item.href) && (
-                            <span className="absolute left-0 bottom-0 h-0.5 bg-current w-0 transition-all duration-300 group-hover:w-full"></span>
+                            <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-current transition-all duration-300 group-hover:w-full" />
                           )}
                         </span>
                       </Link>
@@ -145,15 +180,19 @@ export const HeroHeader = () => {
                   ))}
                 </ul>
               </div>
-              <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
+
+              {/* CTA */}
+              <div className="flex w-full flex-col gap-3 pt-6 sm:flex-row lg:w-auto lg:pt-0">
                 <HoverBorderGradient
-                  containerClassName="rounded-full"
-                  as="button"
-                  className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
-                  onClick={handleMenuItemClick}
+                  containerClassName="rounded-full w-full sm:w-auto"
+                  as="div"
+                  className="flex items-center justify-center gap-2 bg-black px-5 py-2.5 text-sm font-semibold text-white dark:bg-[#E8FF00] dark:text-black"
                 >
-                  <Link href="/https://intercom.help/leadxdeal-d062fd4f1bbf/en/articles/11736915-connecting-your-linkedin-account-using-the-leadxdeal-extension">
-                    <span>Get Started</span>
+                  <Link
+                    href="/book-a-call"
+                    onClick={handleMenuItemClick}
+                  >
+                    Book a Free Strategy Call
                   </Link>
                 </HoverBorderGradient>
 

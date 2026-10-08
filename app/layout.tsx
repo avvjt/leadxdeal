@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../app/globals.css";
 import { HeroHeader } from "@/components/header";
 import { ThemeProvider } from "@/components/theme-provider";
-import Script from "next/script"; 
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,8 +16,31 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "leadxdeal",
-  description: "Automate LinkedIn connection",
+  title: {
+    default: "LeadXDeal | Where Leads Become Deals",
+    template: "%s | LeadXDeal",
+  },
+  description:
+    "Get BANT-qualified sales meetings delivered to your calendar. Exclusive leads, booked meetings and zero monthly retainers.",
+  keywords: [
+    "B2B lead generation",
+    "sales appointment setting",
+    "qualified sales meetings",
+    "B2B outbound",
+    "lead generation",
+    "appointment setting",
+    "sales outreach",
+    "LeadXDeal",
+  ],
+  authors: [{ name: "LeadXDeal" }],
+  creator: "LeadXDeal",
+  openGraph: {
+    title: "LeadXDeal | Where Leads Become Deals",
+    description:
+      "Exclusive leads. Booked meetings. Zero retainers.",
+    type: "website",
+    siteName: "LeadXDeal",
+  },
 };
 
 export default function RootLayout({
@@ -66,6 +89,7 @@ export default function RootLayout({
               (function(){
                 var w=window;
                 var ic=w.Intercom;
+
                 if(typeof ic==="function"){
                   ic('reattach_activator');
                   ic('update',w.intercomSettings);
@@ -75,14 +99,17 @@ export default function RootLayout({
                   i.q=[];
                   i.c=function(args){i.q.push(args);};
                   w.Intercom=i;
+
                   var l=function(){
                     var s=d.createElement('script');
                     s.type='text/javascript';
                     s.async=true;
                     s.src='https://widget.intercom.io/widget/d5xaul0z';
+
                     var x=d.getElementsByTagName('script')[0];
                     x.parentNode.insertBefore(s,x);
                   };
+
                   if(document.readyState==='complete'){
                     l();
                   } else if(w.attachEvent){
@@ -96,7 +123,6 @@ export default function RootLayout({
           }}
         />
 
-        {/* Your App Layout */}
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -106,6 +132,7 @@ export default function RootLayout({
           <div className="fixed top-0 left-0 right-0 z-50">
             <HeroHeader />
           </div>
+
           <div className="pt-24">
             {children}
           </div>

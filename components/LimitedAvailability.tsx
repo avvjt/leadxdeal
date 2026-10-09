@@ -409,6 +409,7 @@ export default function LimitedAvailability() {
           ))}
         </div>
 
+
         {/* FINAL CTA */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -422,13 +423,18 @@ export default function LimitedAvailability() {
           </p>
 
           <div className="mt-8">
-            <Link
-              href="/market-check"
+            <a
+              href={`https://wa.me/917483266259?text=${encodeURIComponent(
+                "Hi LeadXDeal! 👋\n\nI'd like to check whether my target market is available and learn more about your launch bonuses.\n\nI'm interested in:\n• Exclusive B2B leads\n• BANT-qualified sales meetings\n• Market exclusivity and availability\n• Launch bonuses and current offers\n• Pricing and how to get started\n\nMy business details:\nBusiness name: \nWebsite: \nIndustry: \nTarget market/location: \nTarget audience: \n\nCould you confirm availability for my market and explain the next steps?\n\nThank you!"
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Check your market availability with LeadXDeal on WhatsApp"
               className="group inline-flex items-center gap-3 rounded-full bg-[#E8FF00] px-7 py-4 text-sm font-bold text-black shadow-[0_0_40px_rgba(232,255,0,0.15)] transition-all duration-300 hover:shadow-[0_0_65px_rgba(232,255,0,0.35)]"
             >
               See If Your Market Is Available
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
+            </a>
           </div>
 
           {/* Trust row */}

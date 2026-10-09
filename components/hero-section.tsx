@@ -1,6 +1,4 @@
-
 "use client";
-
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -456,6 +454,8 @@ export default function HeroSection() {
           </AnimatedGroup>
 
           {/* CTA BUTTONS */}
+
+          {/* CTA BUTTONS */}
           <AnimatedGroup
             variants={{
               container: {
@@ -469,26 +469,26 @@ export default function HeroSection() {
               ...transitionVariants,
             }}
             className="
-              relative z-20 mt-9 flex w-full flex-col
-              items-center justify-center gap-3
-              sm:w-auto sm:flex-row
-            "
+    relative z-20 mt-9 flex w-full flex-col
+    items-center justify-center gap-3
+    sm:w-auto sm:flex-row
+  "
           >
-            {/* PRIMARY CTA */}
+            {/* PRIMARY CTA — BOOK A CALL */}
             <HoverBorderGradient
               as={Link}
               href="/book-a-call"
               containerClassName="rounded-full"
               className="
-                group relative flex h-13 items-center
-                justify-center overflow-hidden rounded-full
-                bg-[#E8FF00] px-7 text-sm font-black text-black
-                shadow-[0_0_25px_rgba(232,255,0,0.25)]
-                transition-all duration-300
-                hover:-translate-y-1 hover:bg-[#DFFF00]
-                hover:shadow-[0_0_45px_rgba(232,255,0,0.45)]
-                sm:px-8
-              "
+      group relative flex h-13 items-center
+      justify-center overflow-hidden rounded-full
+      bg-[#E8FF00] px-7 text-sm font-black text-black
+      shadow-[0_0_25px_rgba(232,255,0,0.25)]
+      transition-all duration-300
+      hover:-translate-y-1 hover:bg-[#DFFF00]
+      hover:shadow-[0_0_45px_rgba(232,255,0,0.45)]
+      sm:px-8
+    "
               duration={1}
               clockwise={true}
             >
@@ -503,24 +503,32 @@ export default function HeroSection() {
                   repeat: Infinity,
                   repeatDelay: 2,
                 }}
-                className="absolute inset-y-0 w-1/3 -skew-x-12 bg-white/30 blur-sm"
+                className="
+        absolute inset-y-0 w-1/3 -skew-x-12
+        bg-white/30 blur-sm
+      "
               />
             </HoverBorderGradient>
 
-            {/* SECONDARY CTA */}
-            <Link
-              href="/market-check"
+            {/* SECONDARY CTA — WHATSAPP MARKET AVAILABILITY */}
+            <a
+              href={`https://wa.me/917483266259?text=${encodeURIComponent(
+                "Hi LeadXDeal! 👋\n\nI visited your website and would like to check whether my target market is available for exclusive B2B leads and qualified sales meetings.\n\nCould you please help me with:\n• Market and industry availability\n• Target audience and decision-maker coverage\n• Lead generation and appointment-setting options\n\nMy target market:\nIndustry: \nTarget location: \nIdeal customer profile: \n\nLooking forward to hearing from you. Thank you!"
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Check market availability on WhatsApp"
               className="
-                group flex h-13 items-center justify-center
-                rounded-full border border-neutral-300
-                bg-white/70 px-7 text-sm font-bold
-                text-neutral-900 backdrop-blur-md
-                transition-all duration-300 hover:-translate-y-1
-                hover:border-[#007F83] hover:bg-[#007F83]/5
-                dark:border-white/15 dark:bg-white/[0.035]
-                dark:text-white dark:hover:border-[#20BFC2]/60
-                dark:hover:bg-[#007F83]/10 sm:px-8
-              "
+      group flex h-13 items-center justify-center
+      rounded-full border border-neutral-300
+      bg-white/70 px-7 text-sm font-bold
+      text-neutral-900 backdrop-blur-md
+      transition-all duration-300 hover:-translate-y-1
+      hover:border-[#007F83] hover:bg-[#007F83]/5
+      dark:border-white/15 dark:bg-white/[0.035]
+      dark:text-white dark:hover:border-[#20BFC2]/60
+      dark:hover:bg-[#007F83]/10 sm:px-8
+    "
             >
               <span>See If My Market Is Available</span>
 
@@ -531,8 +539,9 @@ export default function HeroSection() {
               >
                 →
               </motion.span>
-            </Link>
+            </a>
           </AnimatedGroup>
+
 
           {/* NO-RETAINER REASSURANCE */}
           <motion.p
@@ -586,10 +595,9 @@ export default function HeroSection() {
                       group relative px-5 py-6 text-center
                       transition-all duration-300
                       hover:bg-neutral-50 dark:hover:bg-white/[0.035]
-                      ${
-                        index < 2
-                          ? "border-b border-neutral-200 md:border-b-0"
-                          : ""
+                      ${index < 2
+                        ? "border-b border-neutral-200 md:border-b-0"
+                        : ""
                       }
                       ${index % 2 === 0 ? "md:border-r" : ""}
                       ${index !== 3 ? "dark:border-white/10" : ""}

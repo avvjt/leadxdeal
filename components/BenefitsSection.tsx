@@ -304,11 +304,10 @@ export default function BenefitsSection() {
                         delay: 0.2 + index * 0.1,
                         duration: 0.4,
                       }}
-                      className={`rounded-full px-3.5 py-2 text-[10px] font-semibold ${
-                        index === 4
+                      className={`rounded-full px-3.5 py-2 text-[10px] font-semibold ${index === 4
                           ? "bg-[#E8FF00] text-black"
                           : "border border-zinc-200 bg-white text-zinc-500 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400"
-                      }`}
+                        }`}
                     >
                       {step}
                     </motion.div>
@@ -326,14 +325,20 @@ export default function BenefitsSection() {
                 whileTap={{ scale: 0.98 }}
                 className="mt-9"
               >
-                <Link
-                  href="/book-a-call"
+                <a
+                  href={`https://wa.me/917483266259?text=${encodeURIComponent(
+                    "Hi LeadXDeal! 👋\n\nI'd like to start generating qualified B2B sales meetings for my business.\n\nI'm interested in learning how your team can help with:\n• Exclusive, qualified B2B leads\n• Reaching the right decision-makers\n• BANT-qualified sales meetings\n• Building a predictable sales pipeline\n\nMy business details:\nBusiness name: \nWebsite: \nIndustry: \nTarget market: \nMonthly meeting target: \n\nCould you share your process, pricing, and the next steps to get started?\n\nThank you!"
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Start generating qualified sales meetings with LeadXDeal on WhatsApp"
                   className="group inline-flex items-center gap-3 rounded-full bg-[#E8FF00] px-6 py-3.5 text-sm font-bold text-black shadow-[0_0_35px_rgba(232,255,0,0.12)] transition-all duration-300 hover:shadow-[0_0_50px_rgba(232,255,0,0.3)]"
                 >
                   Start Generating Meetings
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
+                </a>
               </motion.div>
+
             </div>
           </div>
         </motion.div>

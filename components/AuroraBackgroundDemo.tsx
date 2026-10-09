@@ -50,6 +50,7 @@ export function AuroraBackgroundDemo() {
 
         {/* CTA */}
         <div className="flex flex-col items-center gap-4 sm:flex-row">
+          {/* PRIMARY CTA — BOOK A CALL */}
           <Link
             href="/book-a-call"
             className="group inline-flex items-center gap-2 rounded-full bg-black px-7 py-4 text-sm font-bold text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-zinc-800 hover:shadow-2xl dark:bg-[#E8FF00] dark:text-black dark:hover:bg-[#d9ef00]"
@@ -59,13 +60,19 @@ export function AuroraBackgroundDemo() {
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
 
-          <Link
-            href="/market-check"
+          {/* SECONDARY CTA — CHECK MARKET ON WHATSAPP */}
+          <a
+            href={`https://wa.me/917483266259?text=${encodeURIComponent(
+              "Hi LeadXDeal! 👋\n\nI'd like to check whether you can support my target market with exclusive B2B leads and qualified sales meetings.\n\nHere are my details:\nBusiness name: \nWebsite: \nIndustry: \nTarget country/region: \nIdeal customer profile: \n\nCould you please confirm market availability and explain the next steps?\n\nThank you!"
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Check market availability with LeadXDeal on WhatsApp"
             className="group inline-flex items-center gap-2 rounded-full border border-black/15 bg-white/50 px-7 py-4 text-sm font-bold text-black backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:bg-white dark:border-white/15 dark:bg-black/20 dark:text-white dark:hover:bg-black/40"
           >
             Check My Market
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
+          </a>
         </div>
 
         {/* Bottom trust line */}

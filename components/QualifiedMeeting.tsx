@@ -148,9 +148,9 @@ function QualificationCard({
             animate={
               isInView
                 ? {
-                    scale: 1,
-                    opacity: 1,
-                  }
+                  scale: 1,
+                  opacity: 1,
+                }
                 : {}
             }
             transition={{
@@ -399,6 +399,7 @@ export default function QualifiedMeeting() {
           </div>
         </div>
 
+
         {/* BOTTOM CTA */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -413,15 +414,22 @@ export default function QualifiedMeeting() {
               <span>Only qualified opportunities make it through.</span>
             </div>
 
-            <Link
-              href="/book-a-call"
-              className="group inline-flex items-center gap-3 rounded-full bg-[#E8FF00] px-6 py-3.5 text-sm font-bold text-black shadow-[0_0_35px_rgba(232,255,0,0.12)] transition-all duration-300 hover:shadow-[0_0_50px_rgba(232,255,0,0.25)]"
+            <a
+              href={`https://wa.me/917483266259?text=${encodeURIComponent(
+                "Hi LeadXDeal! 👋\n\nI'd like to understand how your BANT qualification process works.\n\nCould you explain how you assess a prospect's:\n• Budget\n• Authority\n• Need\n• Timeline\n\nI'd also like to know how you ensure the meetings are relevant to my business and target audience.\n\nMy industry: \nTarget market: \n\nLooking forward to learning more. Thank you!"
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ask LeadXDeal about its BANT qualification process on WhatsApp"
+              className="group inline-flex items-center gap-3 rounded-full bg-[#E8FF00] px-6 py-3.5 text-sm font-bold text-black shadow-[0_0_35px_rgba(232,255,0,0.12)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_50px_rgba(232,255,0,0.25)]"
             >
               See How We Qualify
+
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Link>
+            </a>
           </div>
         </motion.div>
+
       </div>
     </section>
   );

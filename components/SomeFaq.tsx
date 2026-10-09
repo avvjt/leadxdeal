@@ -445,30 +445,35 @@ export default function SomeFaq() {
         >
           <p
             className="
-              text-sm
-              text-neutral-500
-              dark:text-neutral-400
-            "
+      text-sm
+      text-neutral-500
+      dark:text-neutral-400
+    "
           >
             Still have questions?
           </p>
 
-          <Link
-            href="/contact"
+          <a
+            href={`https://wa.me/917483266259?text=${encodeURIComponent(
+              "Hi LeadXDeal! 👋\n\nI have a few questions about your B2B lead generation and sales meeting services.\n\nI'd like to understand more about your process, target audience, qualified meetings, pricing, and how you can help my business grow.\n\nMy business details:\nBusiness name: \nWebsite: \nIndustry: \n\nCould someone from your team help me with the details?\n\nThank you!"
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Talk to the LeadXDeal team on WhatsApp"
             className="
-              group
-              mt-3
-              inline-flex
-              items-center
-              gap-2
-              text-sm
-              font-bold
-              text-neutral-900
-              transition-colors
-              hover:text-[#8da000]
-              dark:text-white
-              dark:hover:text-[#E8FF00]
-            "
+      group
+      mt-3
+      inline-flex
+      items-center
+      gap-2
+      text-sm
+      font-bold
+      text-neutral-900
+      transition-colors
+      hover:text-[#8da000]
+      dark:text-white
+      dark:hover:text-[#E8FF00]
+    "
           >
             Talk to our team
 
@@ -479,8 +484,9 @@ export default function SomeFaq() {
             >
               →
             </motion.span>
-          </Link>
+          </a>
         </motion.div>
+
       </div>
     </section>
   );

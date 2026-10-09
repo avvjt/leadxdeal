@@ -76,14 +76,21 @@ export default function IntegrationsSection() {
               ))}
             </div>
 
-            {/* CTA */}
-            <Link
-              href="/book-a-call"
+            {/* CTA — DISCUSS YOUR TECH STACK */}
+            <a
+              href={`https://wa.me/917483266259?text=${encodeURIComponent(
+                "Hi LeadXDeal! 👋\n\nI'd like to discuss the technology stack and automation systems used for your B2B lead generation and appointment-setting services.\n\nI'm interested in learning more about:\n• Your prospect research and data tools\n• LinkedIn and email outreach automation\n• CRM and calendar integrations\n• AI-powered sales workflows\n• How your systems could fit my business needs\n\nMy business/industry: \nCurrent tech stack (if any): \nMain requirement: \n\nCould we discuss the best approach for my business?\n\nThank you!"
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Discuss your tech stack with LeadXDeal on WhatsApp"
               className="group mt-9 inline-flex items-center gap-2 rounded-xl bg-black px-6 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl dark:bg-[#E8FF00] dark:text-black dark:hover:bg-[#d9ef00]"
             >
               Talk About Your Stack
+
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
+            </a>
+
           </motion.div>
 
           {/* Integration visual */}

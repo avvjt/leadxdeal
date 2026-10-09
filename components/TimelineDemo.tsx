@@ -437,22 +437,28 @@ export function TimelineDemo() {
               </span>
             </p>
 
-            <Link
-              href="/contact"
+
+            <a
+              href={`https://wa.me/917483266259?text=${encodeURIComponent(
+                "Hi LeadXDeal! 👋\n\nI'm interested in getting more qualified sales meetings for my business.\n\nI'd like to discuss how LeadXDeal can help me generate exclusive B2B leads, reach decision-makers, and build a predictable sales pipeline.\n\nMy details:\nBusiness name: \nWebsite: \nIndustry: \nTarget market: \n\nCould you please guide me on the next steps?\n\nThank you!"
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Start getting qualified sales meetings on WhatsApp"
               className="
-                relative mt-6
-                inline-flex items-center gap-2
-                rounded-full
-                bg-[#E8FF00]
-                px-6 py-3
-                text-sm font-black
-                text-black
-                shadow-[0_0_30px_rgba(232,255,0,0.2)]
-                transition-all duration-300
-                hover:-translate-y-1
-                hover:bg-[#dfff00]
-                hover:shadow-[0_0_45px_rgba(232,255,0,0.4)]
-              "
+    relative mt-6
+    inline-flex items-center gap-2
+    rounded-full
+    bg-[#E8FF00]
+    px-6 py-3
+    text-sm font-black
+    text-black
+    shadow-[0_0_30px_rgba(232,255,0,0.2)]
+    transition-all duration-300
+    hover:-translate-y-1
+    hover:bg-[#dfff00]
+    hover:shadow-[0_0_45px_rgba(232,255,0,0.4)]
+  "
             >
               Start Getting Meetings
 
@@ -463,7 +469,8 @@ export function TimelineDemo() {
               >
                 →
               </motion.span>
-            </Link>
+            </a>
+
           </motion.div>
         </div>
       ),

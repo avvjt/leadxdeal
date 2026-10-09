@@ -446,15 +446,21 @@ export default function CompareOptions() {
           transition={{ duration: 0.7 }}
           className="mt-12 text-center"
         >
-          <Link
-            href="/market-check"
+          <a
+            href={`https://wa.me/917483266259?text=${encodeURIComponent(
+              "Hi LeadXDeal! 👋\n\nI'd like to understand how your B2B lead generation and sales meeting services compare with my business needs.\n\nI'd like to discuss:\n• Exclusive leads versus shared leads\n• BANT-qualified sales meetings\n• Target audience and decision-maker reach\n• Outreach strategy and follow-ups\n• Expected results, pricing, and timelines\n\nMy business details:\nBusiness name: \nWebsite: \nIndustry: \nTarget market: \nCurrent lead generation method: \nMain sales challenge: \n\nCould you help me understand which solution would be the best fit for my business?\n\nThank you!"
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Compare LeadXDeal services for your business on WhatsApp"
             className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#E8FF00] px-6 py-4 text-base font-bold text-black shadow-[0_0_35px_rgba(232,255,0,0.12)] transition-all duration-300 hover:shadow-[0_0_55px_rgba(232,255,0,0.3)] sm:px-8 sm:text-lg"
           >
             See How We Compare for Your Business
 
             <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
+          </a>
         </motion.div>
+
       </div>
     </section>
   );

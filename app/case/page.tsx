@@ -1,4 +1,3 @@
-
 "use client";
 
 import FooterSection from "@/components/footer";
@@ -11,7 +10,6 @@ import {
   TrendingUp,
   Users,
 } from "lucide-react";
-import Link from "next/link";
 
 const caseStudies = [
   {
@@ -210,6 +208,54 @@ function CaseStudyCard({
 }
 
 function CaseStudyCTA() {
+  const strategyMessage = `Hi LeadXDeal! 👋
+
+I'd like to discuss how LeadXDeal can help my business generate qualified B2B sales meetings and build a predictable sales pipeline.
+
+I'm interested in:
+• Exclusive B2B lead generation
+• Reaching the right decision-makers
+• BANT-qualified sales meetings
+• Multi-channel outreach
+• A growth strategy tailored to my business
+
+My business details:
+Business name:
+Website:
+Industry:
+Target market:
+Monthly meeting target:
+Main sales challenge:
+
+Could you recommend a suitable strategy and share your pricing and onboarding process?
+
+Thank you!`;
+
+  const marketMessage = `Hi LeadXDeal! 👋
+
+I'd like to check whether my target market is available for your B2B lead generation and qualified sales meeting services.
+
+My business details:
+Business name:
+Website:
+Industry:
+Target market/location:
+Ideal customer profile (ICP):
+Target decision-makers:
+Main sales challenge:
+
+Could you confirm market availability and explain how your exclusive lead generation and BANT qualification process works?
+
+Thank you!`;
+
+  const strategyWhatsAppUrl = `https://wa.me/917483266259?text=${encodeURIComponent(
+    strategyMessage
+  )}`;
+
+  const marketWhatsAppUrl = `https://wa.me/917483266259?text=${encodeURIComponent(
+    marketMessage
+  )}`;
+
   return (
     <section className="relative overflow-hidden bg-white py-20 dark:bg-[#050505] lg:py-28">
       <div className="absolute left-1/2 top-1/2 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#20BFC2]/10 blur-[150px]" />
@@ -242,21 +288,29 @@ function CaseStudyCTA() {
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              href="/book-a-call"
+            {/* Strategy call CTA — WhatsApp */}
+            <a
+              href={strategyWhatsAppUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Discuss your free sales strategy with LeadXDeal on WhatsApp"
               className="group inline-flex items-center gap-2 rounded-xl bg-black px-7 py-4 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:bg-[#E8FF00] dark:text-black dark:hover:bg-[#d9ef00]"
             >
               Book My Free Strategy Call
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
+            </a>
 
-            <Link
-              href="/market-check"
+            {/* Market availability CTA — WhatsApp */}
+            <a
+              href={marketWhatsAppUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Check your target market availability with LeadXDeal on WhatsApp"
               className="inline-flex items-center gap-2 rounded-xl border border-zinc-300 px-7 py-4 text-base font-semibold text-black transition-all duration-300 hover:bg-zinc-100 dark:border-white/10 dark:text-white dark:hover:bg-white/5"
             >
               Check My Market
               <ChevronRight className="h-4 w-4" />
-            </Link>
+            </a>
           </div>
         </motion.div>
       </div>
@@ -287,7 +341,6 @@ export default function CaseStudies() {
             <h1 className="text-4xl font-black tracking-tight text-black dark:text-white sm:text-6xl lg:text-7xl">
               Client Success
               <br />
-
               <span className="relative">
                 Estimations
                 <span className="absolute -bottom-2 left-0 h-1.5 w-full rounded-full bg-[#E8FF00]" />

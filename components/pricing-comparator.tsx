@@ -1,9 +1,6 @@
 "use client";
-
 import React from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
-
 const CheckSVG = ({
   className = "h-4 w-4 shrink-0",
 }: {
@@ -18,7 +15,7 @@ const CheckSVG = ({
     <path d="M10.28 2.28L3.989 8.575 1.695 6.28A1 1 0 00.28 7.695l3 3a1 1 0 001.414 0l7-7a1 1 0 00-1.414-1.415z" />
   </svg>
 );
-
+const WHATSAPP_NUMBER = "917483266259";
 const plans = [
   {
     name: "Campaign Setup",
@@ -36,7 +33,25 @@ const plans = [
     ],
     popular: false,
     ctaText: "Start My Campaign",
-    href: "/contact",
+    message: `Hi LeadXDeal! 👋
+I'm interested in your CAMPAIGN SETUP package (£900 one-time).
+I'd like to discuss:
+• ICP and market research
+• Target-account definition
+• Messaging strategy
+• Multi-channel outreach infrastructure
+• Campaign setup and launch
+• CRM / calendar integration
+• BANT qualification framework
+My business details:
+Business name:
+Website:
+Industry:
+Target market:
+Ideal customer profile:
+Main sales challenge:
+Could you explain the onboarding process, deliverables, expected timeline, and how we can get started?
+Thank you!`,
   },
   {
     name: "Pay-Per-Meeting",
@@ -55,7 +70,25 @@ const plans = [
     ],
     popular: true,
     ctaText: "Get Started",
-    href: "/contact",
+    message: `Hi LeadXDeal! 👋
+I'm interested in your PAY-PER-MEETING package (£150 per qualified meeting).
+I'd like to understand how your team delivers:
+• LinkedIn, email and expert cold calling
+• AI-powered sales automation
+• BANT-qualified prospects
+• Meetings booked directly into my calendar
+• Follow-ups and campaign management
+• Continuous campaign optimisation
+My business details:
+Business name:
+Website:
+Industry:
+Target market:
+Target decision-makers:
+Monthly meeting target:
+Current lead generation method:
+Could you explain your qualification criteria, meeting delivery process, payment terms, and how to get started?
+Thank you!`,
   },
   {
     name: "Enterprise",
@@ -71,10 +104,37 @@ const plans = [
     ],
     popular: false,
     ctaText: "Talk to Our Team",
-    href: "/contact",
+    message: `Hi LeadXDeal! 👋
+I'm interested in your ENTERPRISE package and would like a tailored proposal.
+I'm looking for support with:
+• Multiple ideal customer profiles (ICPs)
+• Multiple target markets and territories
+• Expanded outreach infrastructure
+• Dedicated account management
+• Custom go-to-market strategy
+• Volume-based pricing
+My business details:
+Company name:
+Website:
+Industry:
+Target markets:
+Number of ICPs:
+Estimated monthly meeting volume:
+Current sales team size:
+Primary business goals:
+Could we discuss the available options, custom pricing, implementation timeline, and a suitable enterprise solution?
+Thank you!`,
   },
 ];
-
+const launchOfferMessage = `Hi LeadXDeal! 👋
+I'm interested in your Launch Offer.
+I'd like to learn more about:
+• The first 3 qualified meetings free
+• The £450 saving
+• The free ICP and target-account list
+• The free LinkedIn outreach swipe file
+Could you confirm my eligibility, the offer terms, and how to get started?
+Thank you!`;
 const investmentRows = [
   {
     meetings: "20",
@@ -89,7 +149,6 @@ const investmentRows = [
     total: "£5,400",
   },
 ];
-
 export default function PricingComparator() {
   return (
     <section
@@ -121,7 +180,6 @@ export default function PricingComparator() {
             backgroundSize: "48px 48px",
           }}
         />
-
         {/* Lime glow */}
         <motion.div
           animate={{
@@ -145,7 +203,6 @@ export default function PricingComparator() {
             blur-[140px]
           "
         />
-
         {/* Blue glow */}
         <motion.div
           animate={{
@@ -168,16 +225,14 @@ export default function PricingComparator() {
             blur-[130px]
           "
         />
-
         <div
           className="
             absolute inset-0
-            bg-[radial-gradient(circle_at_center,transparent_20%,rgba(255,255,255,0.75)_100%)]
-            dark:bg-[radial-gradient(circle_at_center,transparent_20%,rgba(0,0,0,0.65)_100%)]
+            bg-[radial-gradient(circle_at_center,transparent_20%,rgba(255,255,255,0.75)\_100%)]
+            dark:bg-[radial-gradient(circle_at_center,transparent_20%,rgba(0,0,0,0.65)\_100%)]
           "
         />
       </div>
-
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
         {/* Header */}
         <motion.div
@@ -222,10 +277,8 @@ export default function PricingComparator() {
                 shadow-[0_0_12px_rgba(232,255,0,0.9)]
               "
             />
-
             Simple Pricing
           </motion.div>
-
           <h2
             className="
               text-4xl
@@ -242,7 +295,6 @@ export default function PricingComparator() {
               Plan
             </span>
           </h2>
-
           <p
             className="
               mx-auto
@@ -259,7 +311,6 @@ export default function PricingComparator() {
             no ad spend, no long-term contract.
           </p>
         </motion.div>
-
         {/* Pricing cards */}
         <div className="mx-auto mt-14 grid max-w-6xl gap-5 lg:grid-cols-3">
           {plans.map((plan, index) => (
@@ -303,7 +354,6 @@ export default function PricingComparator() {
                   "
                 />
               )}
-
               <div
                 className={`
                   relative
@@ -356,7 +406,6 @@ export default function PricingComparator() {
                     </div>
                   </div>
                 )}
-
                 {/* Plan heading */}
                 <div className="mb-7">
                   <div
@@ -375,7 +424,6 @@ export default function PricingComparator() {
                   >
                     {plan.name}
                   </div>
-
                   <div className="flex flex-wrap items-baseline gap-2">
                     <span
                       className="
@@ -388,7 +436,6 @@ export default function PricingComparator() {
                     >
                       {plan.price}
                     </span>
-
                     {plan.suffix && (
                       <span
                         className="
@@ -402,7 +449,6 @@ export default function PricingComparator() {
                       </span>
                     )}
                   </div>
-
                   <p
                     className="
                       mt-3
@@ -416,10 +462,12 @@ export default function PricingComparator() {
                     {plan.description}
                   </p>
                 </div>
-
                 {/* CTA */}
-                <Link
-                  href={plan.href}
+                <a
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(plan.message)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Enquire about the ${plan.name} package on WhatsApp`}
                   className={`
                     group
                     mb-8
@@ -460,7 +508,6 @@ export default function PricingComparator() {
                   `}
                 >
                   {plan.ctaText}
-
                   <motion.span
                     initial={{ x: 0 }}
                     whileHover={{ x: 4 }}
@@ -468,8 +515,7 @@ export default function PricingComparator() {
                   >
                     →
                   </motion.span>
-                </Link>
-
+                </a>
                 {/* Features */}
                 <div
                   className="
@@ -482,9 +528,8 @@ export default function PricingComparator() {
                     dark:text-neutral-500
                   "
                 >
-                  What&apos;s included
+                  What's included
                 </div>
-
                 <ul className="grow space-y-3.5">
                   {plan.features.map((feature, featureIndex) => (
                     <motion.li
@@ -535,7 +580,6 @@ export default function PricingComparator() {
                       >
                         <CheckSVG className="h-2.5 w-2.5" />
                       </span>
-
                       <span>{feature}</span>
                     </motion.li>
                   ))}
@@ -544,7 +588,6 @@ export default function PricingComparator() {
             </motion.div>
           ))}
         </div>
-
         {/* Investment calculator */}
         <motion.div
           initial={{
@@ -577,7 +620,6 @@ export default function PricingComparator() {
             >
               The numbers
             </p>
-
             <h3
               className="
                 mt-3
@@ -596,7 +638,6 @@ export default function PricingComparator() {
               </span>
             </h3>
           </div>
-
           <div
             className="
               overflow-hidden
@@ -637,7 +678,6 @@ export default function PricingComparator() {
                 <div>Setup</div>
                 <div>Month-1 investment</div>
               </div>
-
               {investmentRows.map((row, index) => (
                 <motion.div
                   key={row.meetings}
@@ -674,15 +714,12 @@ export default function PricingComparator() {
                       qualified meetings
                     </span>
                   </div>
-
                   <div className="text-lg font-bold text-neutral-700 dark:text-neutral-300">
                     {row.meetingCost}
                   </div>
-
                   <div className="text-lg font-bold text-neutral-500 dark:text-neutral-400">
                     {row.setup}
                   </div>
-
                   <div
                     className="
                       text-2xl
@@ -696,7 +733,6 @@ export default function PricingComparator() {
                 </motion.div>
               ))}
             </div>
-
             {/* Mobile cards */}
             <div className="space-y-3 p-4 md:hidden">
               {investmentRows.map((row, index) => (
@@ -731,14 +767,11 @@ export default function PricingComparator() {
                     <span className="text-xl font-black text-neutral-950 dark:text-white">
                       {row.meetings}
                     </span>
-
                     <span className="text-xs font-semibold text-neutral-500 dark:text-neutral-400">
                       qualified meetings
                     </span>
                   </div>
-
                   <div className="my-4 h-px bg-neutral-200 dark:bg-white/10" />
-
                   <div className="space-y-3 text-sm">
                     <div className="flex justify-between">
                       <span className="text-neutral-500">
@@ -748,7 +781,6 @@ export default function PricingComparator() {
                         {row.meetingCost}
                       </span>
                     </div>
-
                     <div className="flex justify-between">
                       <span className="text-neutral-500">
                         Setup
@@ -757,12 +789,10 @@ export default function PricingComparator() {
                         {row.setup}
                       </span>
                     </div>
-
                     <div className="flex justify-between border-t border-neutral-200 pt-3 dark:border-white/10">
                       <span className="font-bold text-neutral-900 dark:text-white">
                         Month-1 investment
                       </span>
-
                       <span className="text-xl font-black text-[#7f9200] dark:text-[#E8FF00]">
                         {row.total}
                       </span>
@@ -771,7 +801,6 @@ export default function PricingComparator() {
                 </motion.div>
               ))}
             </div>
-
             <div
               className="
                 border-t
@@ -792,7 +821,6 @@ export default function PricingComparator() {
             </div>
           </div>
         </motion.div>
-
         {/* Launch offer */}
         <motion.div
           initial={{
@@ -849,7 +877,6 @@ export default function PricingComparator() {
               blur-xl
             "
           />
-
           <div
             className="
               relative
@@ -872,7 +899,6 @@ export default function PricingComparator() {
           >
             Launch Offer
           </div>
-
           <h4
             className="
               relative
@@ -889,7 +915,6 @@ export default function PricingComparator() {
               3 qualified meetings are free
             </span>
           </h4>
-
           <p
             className="
               relative
@@ -905,9 +930,11 @@ export default function PricingComparator() {
             A £450 saving, plus a free ICP & target-account list and a free
             LinkedIn outreach swipe file.
           </p>
-
-          <Link
-            href="/contact"
+          <a
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(launchOfferMessage)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ask LeadXDeal about the launch offer on WhatsApp"
             className="
               relative
               mt-6
@@ -932,7 +959,6 @@ export default function PricingComparator() {
             "
           >
             Get Started
-
             <motion.span
               initial={{ x: 0 }}
               whileHover={{ x: 4 }}
@@ -940,9 +966,8 @@ export default function PricingComparator() {
             >
               →
             </motion.span>
-          </Link>
+          </a>
         </motion.div>
-
         {/* Bottom reassurance */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -981,7 +1006,6 @@ export default function PricingComparator() {
               >
                 <CheckSVG className="h-2 w-2" />
               </span>
-
               {item}
             </div>
           ))}

@@ -213,15 +213,21 @@ export default function StatsSection() {
               </p>
             </div>
 
-            <Link
-              href="/book-a-call"
+            <a
+              href={`https://wa.me/917483266259?text=${encodeURIComponent(
+                "Hi LeadXDeal! 👋\n\nI'd like to explore how your team can help accelerate sales and build a predictable B2B sales pipeline for my business.\n\nI'm interested in discussing:\n• Exclusive B2B lead generation\n• Reaching the right decision-makers\n• BANT-qualified sales meetings\n• Multi-channel outreach and follow-ups\n• A growth strategy tailored to my business\n\nMy business details:\nBusiness name: \nWebsite: \nIndustry: \nTarget market: \nMain sales challenge: \n\nCould you recommend the best next steps for my business?\n\nThank you!"
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Talk to LeadXDeal about accelerating sales on WhatsApp"
               className="group inline-flex shrink-0 items-center gap-2 rounded-xl bg-black px-6 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl dark:bg-[#E8FF00] dark:text-black dark:hover:bg-[#d9ef00]"
             >
               Let&apos;s Talk
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
+            </a>
           </div>
         </motion.div>
+
 
         {/* Disclaimer */}
         <p className="mx-auto mt-6 max-w-3xl text-center text-xs leading-5 text-zinc-500">

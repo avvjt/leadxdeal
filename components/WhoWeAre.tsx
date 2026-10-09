@@ -634,6 +634,7 @@ export default function WhoWeAre() {
         </div>
 
         {/* Final CTA */}
+
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -641,13 +642,18 @@ export default function WhoWeAre() {
           transition={{ duration: 0.8 }}
           className="mt-20 text-center sm:mt-24"
         >
-          <Link
-            href="/book-a-call"
+          <a
+            href={`https://wa.me/917483266259?text=${encodeURIComponent(
+              "Hi LeadXDeal! 👋\n\nI'd like to build a predictable B2B sales pipeline for my business.\n\nI'm interested in learning how you can help with:\n• Exclusive B2B lead generation\n• Reaching the right decision-makers\n• BANT-qualified sales meetings\n• Multi-channel outreach and follow-ups\n• Creating a consistent flow of sales opportunities\n\nMy business details:\nBusiness name: \nWebsite: \nIndustry: \nTarget market: \nCurrent lead generation method: \nMonthly meeting target: \nMain sales challenge: \n\nCould you recommend a suitable strategy and share your pricing and onboarding process?\n\nThank you!"
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Discuss building your sales pipeline with LeadXDeal on WhatsApp"
             className="group inline-flex items-center gap-3 rounded-full bg-[#E8FF00] px-7 py-4 text-base font-bold text-black shadow-[0_0_40px_rgba(232,255,0,0.12)] transition-all duration-300 hover:shadow-[0_0_60px_rgba(232,255,0,0.3)]"
           >
             Build My Sales Pipeline
             <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
+          </a>
 
           <p className="mt-4 text-xs text-zinc-400">
             You sell. We build the pipeline.

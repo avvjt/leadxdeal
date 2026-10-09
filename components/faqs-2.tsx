@@ -440,11 +440,10 @@ export default function FAQsTwo() {
           <div className="mt-3 flex justify-between px-1 text-xs text-neutral-400 dark:text-neutral-500">
             <span>
               {search
-                ? `${filteredFaqs.length} ${
-                    filteredFaqs.length === 1
-                      ? "question"
-                      : "questions"
-                  } found`
+                ? `${filteredFaqs.length} ${filteredFaqs.length === 1
+                  ? "question"
+                  : "questions"
+                } found`
                 : `${faqItems.length} common questions`}
             </span>
 
@@ -776,139 +775,43 @@ export default function FAQsTwo() {
             BOTTOM CTA
         ================================= */}
 
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 25,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.7,
-          }}
+        <a
+          href={`https://wa.me/917483266259?text=${encodeURIComponent(
+            "Hi LeadXDeal! I'd like to book a free strategy call to discuss my ICP, target market, and the best approach for generating qualified sales meetings. Please let me know your availability."
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Book a free strategy call with LeadXDeal on WhatsApp"
           className="
-            relative
-            mx-auto
-            mt-16
-            max-w-4xl
-            overflow-hidden
-            rounded-3xl
-            border
-            border-[#E8FF00]/20
-            bg-[#E8FF00]/[0.045]
-            p-8
-            text-center
-            dark:bg-[#E8FF00]/[0.03]
-            sm:p-10
-          "
+    mt-6
+    inline-flex
+    items-center
+    gap-2
+    rounded-full
+    bg-[#E8FF00]
+    px-7
+    py-3.5
+    text-sm
+    font-black
+    text-black
+    shadow-[0_0_30px_rgba(232,255,0,0.15)]
+    transition-all
+    duration-300
+    hover:-translate-y-1
+    hover:bg-[#dfff00]
+    hover:shadow-[0_0_45px_rgba(232,255,0,0.35)]
+  "
         >
-          {/* Glow */}
-          <motion.div
-            animate={{
-              scale: [1, 1.15, 1],
-              opacity: [0.3, 0.5, 0.3],
-            }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="
-              pointer-events-none
-              absolute
-              left-1/2
-              top-[-100px]
-              h-[250px]
-              w-[400px]
-              -translate-x-1/2
-              rounded-full
-              bg-[#E8FF00]/10
-              blur-[80px]
-            "
-          />
+          Book My Free Strategy Call
 
-          <div className="relative">
-            <p
-              className="
-                text-xs
-                font-bold
-                uppercase
-                tracking-[0.2em]
-                text-neutral-400
-                dark:text-neutral-500
-              "
-            >
-              Still have questions?
-            </p>
-
-            <h3
-              className="
-                mt-3
-                text-2xl
-                font-black
-                tracking-tight
-                text-neutral-950
-                sm:text-3xl
-                dark:text-white
-              "
-            >
-              Let&apos;s talk about your market.
-            </h3>
-
-            <p
-              className="
-                mx-auto
-                mt-3
-                max-w-xl
-                text-sm
-                leading-6
-                text-neutral-500
-                dark:text-neutral-400
-              "
-            >
-              Book a free strategy call and we&apos;ll assess your ICP, market
-              and the best angle before you commit to anything.
-            </p>
-
-            <Link
-              href="/book-a-call"
-              className="
-                mt-6
-                inline-flex
-                items-center
-                gap-2
-                rounded-full
-                bg-[#E8FF00]
-                px-7
-                py-3.5
-                text-sm
-                font-black
-                text-black
-                shadow-[0_0_30px_rgba(232,255,0,0.15)]
-                transition-all
-                duration-300
-                hover:-translate-y-1
-                hover:bg-[#dfff00]
-                hover:shadow-[0_0_45px_rgba(232,255,0,0.35)]
-              "
-            >
-              Book My Free Strategy Call
-
-              <motion.span
-                initial={{ x: 0 }}
-                whileHover={{ x: 4 }}
-                transition={{ duration: 0.2 }}
-              >
-                →
-              </motion.span>
-            </Link>
-          </div>
-        </motion.div>
+          <motion.span
+            initial={{ x: 0 }}
+            whileHover={{ x: 4 }}
+            transition={{ duration: 0.2 }}
+          >
+            →
+          </motion.span>
+        </a>
       </div>
     </section>
   );

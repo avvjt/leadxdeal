@@ -338,24 +338,31 @@ export default function ProblemSolution() {
                 </span>
               </h3>
 
+              {/* CUSTOM GROWTH PLAN — WHATSAPP CTA */}
               <motion.div
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
                 className="mt-9"
               >
-                <Link
-                  href="/market-check"
+                <a
+                  href={`https://wa.me/917483266259?text=${encodeURIComponent(
+                    "Hi LeadXDeal! 👋\n\nI visited your website and would like to get a custom growth plan for my business.\n\nI'd like to discuss:\n• Generating exclusive B2B leads\n• Reaching the right decision-makers\n• BANT-qualified sales meetings\n• A lead generation strategy tailored to my market\n• Pricing and the performance-based model\n\nHere are my details:\nBusiness name: \nWebsite: \nIndustry: \nTarget market/location: \nMain sales growth challenge: \n\nCould you help me understand the best approach for my business?\n\nThank you!"
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Get your custom growth plan on WhatsApp"
                   className="group inline-flex items-center gap-3 rounded-full bg-[#E8FF00] px-6 py-3.5 text-sm font-bold text-black shadow-[0_0_35px_rgba(232,255,0,0.15)] transition-all duration-300 hover:shadow-[0_0_45px_rgba(232,255,0,0.3)]"
                 >
                   Get Your Custom Growth Plan
+
                   <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
+                </a>
               </motion.div>
 
               <p className="mt-5 text-xs text-zinc-500">
-                No retainer. No long-term contract. Pay for qualified
-                meetings.
+                No retainer. No long-term contract. Pay for qualified meetings.
               </p>
+
             </div>
           </div>
         </motion.div>

@@ -9,8 +9,8 @@ interface CalWidgetProps {
 }
 
 export default function CalWidget({ 
-  namespace = "20min", 
-  calLink = "avvjt/20min"
+  namespace = "15min", 
+  calLink = "leadxdeal/15min"
 }: CalWidgetProps) {
   useEffect(() => {
     (async function initCal() {

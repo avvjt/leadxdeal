@@ -6,8 +6,8 @@ import { AnimatedTooltip } from "./ui/animated-tooltip";
 const people = [
   {
     id: 1,
-    name: "Manju Mahadevi",
-    designation: "CEO & CTO @Leadxdeal",
+    name: "Sohel Roy",
+    designation: "CEO & CTO @CodeDesignLabs",
     image:
       "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80",
   },
@@ -20,7 +20,7 @@ const people = [
   },
   {
     id: 3,
-    name: "Eve Chan",
+    name: "Manju Mahadevi",
     designation: "Founder, Growth Machine",
     image:
       "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=461&q=80",

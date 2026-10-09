@@ -15,20 +15,24 @@ import StatsSection from "@/components/stats";
 import Testimonials from "@/components/testimonials";
 import { TimelineDemo } from "@/components/TimelineDemo";
 import WhoWeAre from "@/components/WhoWeAre";
-
+import VideoShowcase from "@/components/VideoShowcase";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
-      <MacbookScrollDemo />
+      <VideoShowcase
+        src="videos/video.mp4"
+        poster="/images/poster.png"
+      />
+      {/* <MacbookScrollDemo /> */}
       <LogoCloud/>
       <ProblemSolution />
       <TimelineDemo />
       <QualifiedMeeting />
       <IntegrationsSection />
       <AuroraBackgroundDemo/>
-      <Testimonials />
+      {/* <Testimonials /> */}
       <StatsSection />
       <BenefitsSection />
       <CompareOptions />

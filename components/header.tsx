@@ -6,7 +6,6 @@ import { Menu, X } from "lucide-react";
 import React from "react";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
-import { ModeToggle } from "./mode-toggle";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 
 const menuItems = [
@@ -196,7 +195,7 @@ export const HeroHeader = () => {
                   </Link>
                 </HoverBorderGradient>
 
-                <ModeToggle />
+                {/* <ModeToggle /> */}
               </div>
             </div>
           </div>

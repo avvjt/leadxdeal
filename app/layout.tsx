@@ -125,10 +125,11 @@ export default function RootLayout({
 
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"
+          forcedTheme="dark"
           disableTransitionOnChange
         >
+
           <div className="fixed top-0 left-0 right-0 z-50">
             <HeroHeader />
           </div>

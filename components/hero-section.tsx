@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -12,7 +11,6 @@ import {
   CalendarCheck,
   Target,
   Zap,
-  ShieldCheck,
   TrendingUp,
   Users,
 } from "lucide-react";
@@ -66,16 +64,6 @@ const floatingVariants = {
       duration: 5,
       repeat: Infinity,
       ease: "easeInOut" as const,
-    },
-  },
-};
-
-const staggerContainer = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
     },
   },
 };
@@ -238,15 +226,28 @@ Looking forward to hearing from you. Thank you!`
               delay: 0.15,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className="relative z-20 mx-auto max-w-6xl text-center text-[2.7rem] font-black leading-[0.98] tracking-[-0.055em] text-white sm:text-6xl md:text-7xl lg:mx-0 lg:text-left lg:text-8xl xl:text-[6.5rem]"
+            className="
+    relative z-20 mx-auto w-full max-w-6xl
+    text-center font-black
+    leading-[1.08] tracking-[-0.055em]
+    text-white
+    text-[clamp(1.8rem,7.5vw,3.5rem)]
+    sm:text-6xl md:text-7xl
+    lg:mx-0 lg:text-left lg:text-8xl
+    xl:text-[6.5rem]
+  "
           >
-            <span className="block">Exclusive Leads.</span>
+            <span className="block whitespace-nowrap">
+              Exclusive Leads.
+            </span>
 
-            <span className="mt-1 block">
+            <span className="mt-2 block whitespace-nowrap">
               <ColourfulText text="Booked Meetings." />
             </span>
 
-            <span className="mt-1 block">Zero Retainers.</span>
+            <span className="mt-2 block whitespace-nowrap">
+              Zero Retainers.
+            </span>
           </motion.h1>
 
           {/* HEADLINE SUPPORT */}
@@ -448,17 +449,14 @@ Looking forward to hearing from you. Thank you!`
                   <motion.div
                     key={stat.label}
                     whileHover={{ y: -3 }}
-                    className={`group relative px-4 py-6 text-center transition-colors duration-300 hover:bg-white/[0.035] sm:px-6 sm:py-7 ${
-                      index < 2
+                    className={`group relative px-4 py-6 text-center transition-colors duration-300 hover:bg-white/[0.035] sm:px-6 sm:py-7 ${index < 2
                         ? "border-b border-white/10 md:border-b-0"
                         : ""
-                    } ${
-                      index % 2 === 0 ? "md:border-r md:border-white/10" : ""
-                    } ${
-                      index === 0 || index === 1
+                      } ${index % 2 === 0 ? "md:border-r md:border-white/10" : ""
+                      } ${index === 0 || index === 1
                         ? "md:border-b-0"
                         : ""
-                    }`}
+                      }`}
                   >
                     <div className="text-3xl font-black tracking-tight text-white transition-colors duration-300 group-hover:text-[#E8FF00] sm:text-4xl">
                       {stat.value}

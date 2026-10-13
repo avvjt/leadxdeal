@@ -3,7 +3,6 @@
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { ProgressiveBlur } from "@/components/ui/progressive-blur";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
 
 const industries = [
   "IT Managed Services",
@@ -31,8 +30,6 @@ function IndustryPill({ name }: { name: string }) {
       <span className="whitespace-nowrap text-sm font-bold tracking-wide text-[#E8FF00] sm:text-base">
         {name}
       </span>
-
-      <ArrowUpRight className="h-4 w-4 shrink-0 text-[#20BFC2]/70 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#20BFC2]" />
     </div>
   );
 }

@@ -13,22 +13,25 @@ import StatsSection from "@/components/stats";
 import { TimelineDemo } from "@/components/TimelineDemo";
 import WhoWeAre from "@/components/WhoWeAre";
 import VideoShowcase from "@/components/VideoShowcase";
+import Developer from "@/components/Developer";
+
 
 export default function Home() {
   return (
     <>
+      <Developer />
       <HeroSection />
       <VideoShowcase
         src="videos/video.mp4"
         poster="/images/poster.png"
       />
       {/* <MacbookScrollDemo /> */}
-      <LogoCloud/>
+      <LogoCloud />
       <ProblemSolution />
       <TimelineDemo />
       <QualifiedMeeting />
       <IntegrationsSection />
-      <AuroraBackgroundDemo/>
+      <AuroraBackgroundDemo />
       {/* <Testimonials /> */}
       <StatsSection />
       <BenefitsSection />
